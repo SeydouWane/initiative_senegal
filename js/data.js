@@ -285,5 +285,27 @@ const COMMUNE_DETAILS = {
   "Dabo|Kolda": { maire: "Idrissa Baldé", note: "Source à recouper." },
   "Médina Yoro Foulah|Médina Yoro Foulah": { maire: "Kalidou Sy", note: "Réélu (2ᵉ mandat), installé le 9 février 2022." },
   "Diaobé-Kabendou|Vélingara": { maire: "Bambo Guirassy", note: "Élu en janvier 2022 (Pastef)." },
-  "Pakour|Vélingara": { maire: "Diarga Sané", note: "Source à recouper." }
+  "Pakour|Vélingara": { maire: "Diarga Sané", note: "Source à recouper." },
+
+  "Djiredji|Sédhiou": { maire: "Mamadou-Lamine Diawara", note: "En poste en 2022 ; une source évoque son décès (sous le nom Malamine Diawara) — successeur à identifier." },
+  "Tanaff|Goudomp": { maire: "Ibrahima Gomis", note: "En poste en juin 2022 ; un autre nom (Léonce Nzally) est mentionné en 2024 — à reconfirmer." },
+  "Simbandi Balante|Goudomp": { maire: "Famara Kalbert Mané", note: "Réélu (3ᵉ mandat), installé le 15 février 2022." },
+  "Madina Wandifa|Bounkiling": { maire: "Malang Seyni Faty", note: "Source à recouper (site officiel de la commune)." },
+  "Diattacounda|Goudomp": { maire: "Djiby Sadio", note: "Commune remportée par BBY en janvier 2022 — source à recouper." },
+  "Sindian|Bignona": { maire: "Ansou Sané (aussi Ansoumana Sané)", note: "Élu en janvier 2022, seule commune remportée par BBY dans le département de Bignona." },
+  "Diembéring|Oussouye": { maire: "Demba Niassy", note: "Succède à Léopold Abba Diatta (élu en janvier 2022, décédé en cours de mandat)." },
+  "Mlomp|Oussouye": { maire: "Sidy Eniap Sambou", note: "Source à recouper." },
+  "Niaguis|Ziguinchor": { maire: "Victorine Ndèye", note: "Candidate BBY en 2022 — élection à reconfirmer." },
+  "Niakhar|Fatick": { maire: "Macodou Sène", note: "Installé en février 2022." },
+  "Fimela|Fatick": { maire: "Karim Sène", note: "Maire depuis 2013, en poste durant le mandat 2022." },
+  "Palmarin|Fatick": { maire: "Mame Singui Sarr", note: "Élu en janvier 2022." },
+  "Tattaguine|Fatick": { maire: "Ibou Ndiaye", note: "Élu en janvier 2022, a battu le maire sortant Déthié Diouf." },
+  "Diarrère|Fatick": { maire: "Thérèse Faye Diouf", note: "Réélue en janvier 2022 (2ᵉ mandat)." },
+  "Toubacouta|Foundiougne": { maire: "Pape Seydou Dianko (aussi Nianko)", note: "Réélu en janvier 2022 (3ᵉ mandat, en poste depuis 2009)." },
+  "Passy|Foundiougne": { maire: "Mame Baye Niass", note: "Sources divergentes (Adama Cissé aussi mentionné) — à reconfirmer." },
+  "Karang Poste|Foundiougne": { maire: "Ibrahima Diop", note: "Élu en janvier 2022." },
+  "Djilor|Foundiougne": { maire: "Lansana Sano", note: "Mandat débuté le 11 février 2022." },
+  "Colobane|Gossas": { maire: "Mamadou Fall", note: "Source à recouper." },
+  "Coubalan|Ziguinchor": { maire: "Mamadou Lamine Sora", note: "Installé en 2022 par le sous-préfet de Tenghory." },
+  "Djinaky|Bignona": { maire: "Alphouseyni Diémé", note: "Source à recouper." }
 };
