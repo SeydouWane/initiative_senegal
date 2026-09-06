@@ -114,19 +114,23 @@ région, statut]`). Statuts possibles :
 Les fiches (ouvertes en cliquant une commune dans la liste) affichent :
 
 - **Maire** — renseigné dans `COMMUNE_DETAILS` (clé `"Nom|Département"`)
-  pour 47 communes/villes principales, à partir de recherches documentaires
-  sur les élections locales de janvier 2022 (et remplacements connus
-  depuis, ex. Ziguinchor). Certaines entrées portent une note explicite
-  quand les sources se contredisent (ex. Kayar, Pout) — à trancher en
-  priorité. **Toutes les entrées sont à vérifier avant toute publication
+  pour 89 communes, à partir de recherches documentaires sur les élections
+  locales de janvier 2022 (et remplacements connus depuis — décès,
+  démissions, révocations). Les 42 communes d'arrondissement de la région
+  de Dakar (départements Dakar, Guédiawaye, Pikine, Rufisque, Keur Massar)
+  sont bien couvertes ; ailleurs, seules les grandes villes le sont.
+  Certaines entrées portent une note explicite quand les sources se
+  contredisent ou datent d'avant/après un remplacement en cours de mandat
+  (ex. Kayar, Pout, Sébikhotane, Rufisque Ouest) — à trancher en priorité.
+  **Toutes les entrées sont à vérifier avant toute publication
   officielle** — un mandat peut avoir changé de titulaire sans que cela ait
   été retrouvé lors de la recherche. Note : les grandes « Villes » à statut
   particulier (Dakar, Pikine, Guédiawaye, Rufisque, Thiès) n'ont pas
-  d'entrée : elles sont subdivisées en plusieurs communes d'arrondissement,
-  chacune avec son propre maire, sans correspondance 1:1 avec le maire de
-  ville. La grande majorité des 553 communes n'a pas de maire renseigné
-  (aucune base de données publique centralisée des résultats commune par
-  commune n'a été trouvée) : à compléter au format
+  elles-mêmes d'entrée : le maire de ville n'a pas de correspondance 1:1
+  avec une seule commune, chaque commune d'arrondissement ayant son propre
+  maire (déjà renseignés séparément). La grande majorité des 553 communes
+  n'a pas de maire renseigné (aucune base de données publique centralisée
+  des résultats commune par commune n'a été trouvée) : à compléter au format
   ```js
   "Nom de la commune|Nom du département": { maire: "Nom Prénom", note: "source / précision" }
   ```
