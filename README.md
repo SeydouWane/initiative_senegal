@@ -114,16 +114,15 @@ région, statut]`). Statuts possibles :
 Les fiches (ouvertes en cliquant une commune dans la liste) affichent :
 
 - **Maire** — renseigné dans `COMMUNE_DETAILS` (clé `"Nom|Département"`)
-  pour 196 communes, à partir de recherches documentaires sur les élections
+  pour 214 communes sur 553 (les 14 régions ont au moins quelques communes
+  couvertes), à partir de recherches documentaires sur les élections
   locales de janvier 2022 (et remplacements connus depuis — décès,
   démissions, révocations). Les régions de Dakar (42 communes) et de Thiès
-  (l'essentiel des 50 communes des 3 départements) sont bien couvertes,
-  ainsi que Diourbel (10 communes, dont Touba), une bonne partie de Louga,
-  Saint-Louis, Matam, Tambacounda, Kédougou, Kolda, Sédhiou, Ziguinchor et
-  Fatick ; ailleurs (Kaolack, Kaffrine), seules les grandes villes le sont.
-  Beaucoup d'entrées portent la note « Source à recouper » — un seul
-  article de presse, souvent non daté, faute de mieux : à vérifier en
-  priorité.
+  sont les mieux couvertes ; ailleurs la couverture est partielle et très
+  variable d'une commune à l'autre. Beaucoup d'entrées portent la note
+  « Source à recouper » — un seul article de presse, souvent non daté,
+  faute de mieux : à vérifier en priorité avant toute publication
+  officielle.
   Certaines entrées portent une note explicite quand les sources se
   contredisent ou datent d'avant/après un remplacement en cours de mandat
   (ex. Kayar, Pout, Sébikhotane, Rufisque Ouest) — à trancher en priorité.

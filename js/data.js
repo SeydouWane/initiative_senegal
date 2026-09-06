@@ -307,5 +307,24 @@ const COMMUNE_DETAILS = {
   "Djilor|Foundiougne": { maire: "Lansana Sano", note: "Mandat débuté le 11 février 2022." },
   "Colobane|Gossas": { maire: "Mamadou Fall", note: "Source à recouper." },
   "Coubalan|Ziguinchor": { maire: "Mamadou Lamine Sora", note: "Installé en 2022 par le sous-préfet de Tenghory." },
-  "Djinaky|Bignona": { maire: "Alphouseyni Diémé", note: "Source à recouper." }
+  "Djinaky|Bignona": { maire: "Alphouseyni Diémé", note: "Source à recouper." },
+
+  "Gandiaye|Kaolack": { maire: "Pape Songdé Diop", note: "Source à recouper." },
+  "Kahone|Kaolack": { maire: "Fatou Sène", note: "Élue en janvier 2022, première femme à la tête de la commune." },
+  "Ndiaffate|Kaolack": { maire: "Aïssatou Ndiaye", note: "Réélue en janvier 2022 (2ᵉ mandat, coalition BBY)." },
+  "Latmingué|Kaolack": { maire: "Macoumba Diouf", note: "Commune remportée par la coalition Ànd Nawlé Ànd Liguéey en janvier 2022." },
+  "Keur Baka|Kaolack": { maire: "Mamadou Bâ", note: "Source à recouper." },
+  "Sibassor|Kaolack": { maire: "Djiby Kalidou Bâ", note: "Source à recouper." },
+  "Wack Ngouna|Nioro du Rip": { maire: "Amadou Lamine Dieng", note: "Réélu en janvier 2022 (environ 60% des voix)." },
+  "Médina Sabakh|Nioro du Rip": { maire: "Ousmane Guèye", note: "Source ancienne (2017) — mandat 2022 à reconfirmer." },
+  "Paoskoto|Nioro du Rip": { maire: "Momath Ba", note: "Succède à Aly Mané (maire sortant élu président du Conseil départemental de Nioro du Rip en janvier 2022)." },
+  "Keur Madiabel|Nioro du Rip": { maire: "Abdoulaye Diatta", note: "Élu en janvier 2022 (coalition Union citoyenne Bunt Bi), bat le sortant Aliou Kébé." },
+  "Mboss|Guinguinéo": { maire: "Mor Cissé", note: "Sources divergentes (Modou Diop Nguène aussi mentionné) — à reconfirmer." },
+  "Ngathe Naoudé|Guinguinéo": { maire: "Yaye Fatou Diagne", note: "Source à recouper." },
+  "Nganda|Kaffrine": { maire: "Baye Niasse Cissé", note: "Source à recouper." },
+  "Birkilane|Birkelane": { maire: "Fallou Fall", note: "Source à recouper." },
+  "Lour Escale|Koungheul": { maire: "Abdoulaye Ka", note: "Réélu en janvier 2022 (coalition BBY) ; décédé en 2025, successeur à identifier." },
+  "Dianké Souf|Malem Hodar": { maire: "Seydou Ndiaye", note: "Source à recouper." },
+  "Boulel|Kaffrine": { maire: "Ousmane Ndiaye", note: "Source à recouper." },
+  "Gniby|Kaffrine": { maire: "Mansour Ndiaye", note: "Source à recouper." }
 };
