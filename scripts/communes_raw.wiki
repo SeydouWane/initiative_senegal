@@ -1,0 +1,708 @@
+{{Short description|Fourth-level administrative divisions in Senegal}}
+{{Politics of Senegal}}
+The '''Communes of Senegal''' are the fourth-level administrative divisions in [[Senegal]] (below country, region and department). There are some 121 communes in Senegal which have urban status (''communes de ville''), apart from 46 ''communes d'arrondissement'' in the large towns and 370 [[List of settlements in Senegal|rural communities]] (''communautés rurales'') in the countryside.
+{{TOC right|limit=2}}
+
+== History ==
+The communes of [[Saint-Louis, Senegal|Saint-Louis]] and [[Gorée]] were established on 10 August 1872, followed by [[Rufisque]] and [[Dakar]], created in 1880 and 1887 respectively. The inhabitants of these [[Four Communes]] enjoyed a privileged legal status. These first communes, known as ''communes de plein exercice'' (full communes), were modelled directly on the [[Communes of France|French commune]].
+
+Other towns, however, such as [[Thiès]], [[Kaolack]] and [[Ziguinchor]], grew increasingly important both demographically — they were more populous than Gorée or Rufisque — and economically.{{sfn|Hesseling|2000|p=146}} A decree of 1891 opened the possibility of promoting them to the rank of ''communes mixtes'' (mixed communes), as distinct from the full communes. The following were created as mixed communes:{{sfn|Bonnardel|1992|p=136}} [[Thiès]], [[Louga]] and [[Tivaouane]] (1904); [[Ziguinchor]] (1907); [[Mekhe]] (1911); [[Fatick]], [[Foundiougne]] and [[Kaolack]] (1917); [[Diourbel]] (1918); [[Kébémer]] and [[Khombole]] (1925); [[Bambey]], [[Mbour]] and [[Gossas]] (1926). Initially only towns in the coastal region could become mixed communes, but these provisions were extended to all colonies of [[French West Africa]] (AOF) in 1929. These communes were administered by an appointed mayor-administrator and a municipal commission — rather than an elected municipal council — whose members were appointed by the Governor until 1939, after which they were elected. A further wave of creations followed in 1952 with [[Kolda]], [[Mbacké]], [[Guinguinéo]], [[Tambacounda]], [[Matam, Senegal|Matam]] and [[Podor]].{{sfn|Bonnardel|1992|p=136}}
+
+The law of 18 November 1955 on the reorganisation of municipal government in French West Africa marked a decisive step in the [[decentralisation]] process: it reorganised the original four communes, established ''communes de moyen exercice'' (intermediate communes) with an appointed mayor-administrator and an elected municipal council, and elevated other localities to the status of full communes.
+
+At independence in 1960, Senegal had 34 communes, all of full status. In 1961, following Gorée's absorption into Dakar, this number fell to 33.
+
+Law No. 66-64 of 30 June 1966 defined the Municipal Administration Code and, in its Article 3, stipulated that a commune is any locality with a population of at least 1,000 inhabitants that has reached a level of development allowing it to balance its own budget from its own resources.{{efn|''Organisation administrative et territoriale du Sénégal de 1960 à nos jours'' [Administrative and Territorial Organisation of Senegal from 1960 to the Present], http://www.muat.gouv.sn/1960.htm}} Communes are considered legal persons under public law. At that date, the 33 communes were, in alphabetical order: Bakel, Bambey, Bignona, Dagana, Dakar, Diourbel, Fatick, Foundiougne, Gossas, Guinguinéo, Joal-Fadiouth, Kaolack, Kaffrine, Kébémer, Kédougou, Khombole, Kolda, Linguère, Louga, Matam, Mbacké, Mbour, Meckhé, Nioro du Rip, Oussouye, Podor, Saint-Louis, Sédhiou, Tambacounda, Thiès, Tivaouane, Vélingara and Ziguinchor.
+
+In 1983, Decree No. 83-1128 created three communes in place of the former commune of Dakar: [[Dakar]], [[Pikine]] and [[Rufisque]]. In 1990, Decree No. 90-1134 of 8 October 1990 separated [[Guédiawaye]] and [[Bargny, Senegal|Bargny]] from [[Pikine]] and [[Rufisque]] respectively, establishing them as independent communes. Decree No. 90-1135 of 8 October 1990 created nine further communes: [[Dahra, Senegal|Dahra]], [[Koungheul]], [[Ourossogui]], [[Ndioum]], [[Thionck Essyl]], [[Goudomp]], [[Marsassoum]], [[Diofior]] and [[Pout, Senegal|Pout]].
+
+Law No. 96-752 of 5 September 1996 created 12 additional communes: [[Kahone]], [[Passy (Sénégal)|Passy]], [[Gandiaye]], [[Ndoffane|Ndoffane Laghème]], [[Thilogne]], [[Waoundé]], [[Kanel]], [[Golléré]], [[Semmé]], [[Nguékhokh]], [[Thiadiaye]] and [[Sébikotane]].
+
+Decree No. 2002-171 of 21 February 2002 created seven further communes — [[Diamniadio]], [[Mboro]], [[Kayar, Senegal|Kayar]], [[Ranérou]], [[Rosso, Senegal|Rosso]], [[Diawara, Senegal|Diawara]] and [[Ndiandane]] — bringing the total number of urban communes to 67.
+
+Decree No. 2008-748 of 10 July 2008{{efn|Decree No. 2008-748 of 10 July 2008 on the creation of communes in the regions of Fatick, Kaffrine, Kaolack, Kédougou, Kolda, Louga, Matam, Saint-Louis, Sédhiou, Tambacounda, Thiès and Ziguinchor, ''Journal officiel de la République du Sénégal'' [Official Journal of the Republic of Senegal], No. 6446 of 31 December 2008}} significantly increased the number of communes — now 108 — with 41 new creations: [[Karang Poste]], [[Soum (Sénégal)|Soum]], [[Nganda, Senegal|Nganda]], [[Birkelane]], [[Malem Hodar]], [[Keur Madiabel]], [[Saraya, Senegal|Saraya]], [[Salémata]], [[Médina Yoro Foulah]], [[Pata, Senegal|Pata]], [[Dabo, Senegal|Dabo]], [[Salikégné]], [[Saré Yoba Diéga]], [[Kounkané]], [[Diaobé-Kabendou]], [[Guéoul]], [[Sinthiou Bamambé-Banadji]], [[Dembancané]], [[Hamady Ounaré]], [[Mpal, Senegal|Mpal]], [[Ross Béthio]], [[Gaé]], [[Mboumba]], [[Guédé Chantier]], [[Démette]], [[Galoya Toucouleur]], [[Diannah Malary]], [[Samine, Senegal|Samine]], [[Tanaff]], [[Diattacounda]], [[Bounkiling]], [[Madina Wandifa]], [[Kidira]], [[Goudiry]], [[Kothiary]], [[Koumpentoum]], [[Saly Portudal]], [[Ngaparou]], [[Somone]], [[Popenguine-Ndayane]] and [[Diouloulou]].
+
+Six months later, on 31 December 2008 — just weeks before the local elections of 22 March 2009 — five further localities were communalised by decree, on account of their economic potential, geographic position and demographic size:{{efn|Decree No. 2008-1496 of 31 December 2008, ''Journal officiel de la République du Sénégal'' [Official Journal of the Republic of Senegal], No. 6446 of 31 December 2008}} one in the [[Koumpentoum Department]], [[Malem Niani]], and four in the [[Podor Department]]: [[Aéré Lao]], [[Pété]], [[Walaldé]] and [[Bodé Lao]].
+
+From that point, Senegal had 113 so-called ''communes de ville'' (urban communes), in addition to 46 [[communes d'arrondissement du Sénégal|communes d'arrondissement]] for the largest cities.
+
+In 2013 Senegal passed Act III of Decentralization, which abolished [[Rural communities of Senegal|rural communities]], and transformed all rural, urban and arrodissements communes into simply communes.<ref>{{cite journal |last1=Ba |first1=Boubacar |last2=Ka |first2=Rogyatou |title=Acte III de la décentralisation sénégalaise : l'épreuve de la cohérence territoriale et du développement territorial |journal=Daloge |date=2020 |url=https://revuegeo-univdaloa.net/fr/publication/acte-iii-de-la-decentralisation-senegalaise-lepreuve-de-la-coherence-territoriale-et-du |access-date=18 March 2026}}</ref>
+
+== [[Dakar Region]] ==
+=== [[Dakar Department]] ===
+* [[Biscuiterie]]
+* [[Cambérène]]
+* [[Colobane / Fass / Gueule Tapée]]
+* [[Dakar-Plateau]]
+* [[Dieuppeul-Derklé]]
+* [[Fann-Point E-Amitié]]
+* [[Gorée]]
+* [[Grand Dakar]]
+* [[Grand Yoff]]
+* [[Hann Bel-Air]]
+* [[HLM (Dakar)|HLM]]
+* [[Médina, Dakar|Médina]]
+* [[Mermoz-Sacré-Cœur]]
+* [[Ngor]]
+* [[Ouakam]]
+* [[Parcelles Assainies]]
+* [[Patte d'Oie]]
+* [[Sicap-Liberté]]
+* [[Yoff]]
+
+=== [[Guédiawaye Department]] ===
+* [[Golf Sud]]
+* [[Médina Gounass]]
+* [[Ndiarème Limamoulaye]]
+* [[Sam Notaire]]
+* [[Wakhinane Nimzatt]]
+
+=== [[Pikine Department]] ===
+* [[Dalifort]]
+* [[Diacksao]]
+* [[Diamaguène / Sicap Mbao]]
+* [[Djidah Thiaroye Kaw]]
+* [[Guinaw Rail Nord]]
+* [[Guinaw Rail Sud]]
+* [[Mbao]]
+* [[Pikine Est]]
+* [[Pikine Ouest]]
+* [[Pikine Sud]]
+* [[Thiaroye-Gare]]
+* [[Thiaroye-sur-Mer]]
+
+=== [[Rufisque Department]] ===
+* [[Bambylor]]
+* [[Bargny, Senegal|Bargny]]
+* [[Diamniadio]]
+* [[Rufisque Est]]
+* [[Rufisque Nord]]
+* [[Rufisque Ouest]]
+* [[Sangalkam]]
+* [[Sébikhotane]]
+* [[Sendou]]
+* [[Tivaouane Peulh-Niaga]]
+* [[Yène]]
+
+=== [[Keur Massar Department]] ===
+* [[Jaxaay-Parcelles]]
+* [[Keur Massar Nord]]
+* [[Keur Massar Sud]]
+* [[Malika, Senegal|Malika]]
+* [[Yeumbeul Nord]]
+* [[Yeumbeul Sud]]
+
+== [[Diourbel Region]] ==
+=== [[Bambey Department]] ===
+* [[Baba Garage]]
+* [[Bambey]]
+* [[Dinguiraye, Senegal|Dinguiraye]]
+* [[Gawane]]
+* [[Keur Samba Kane]]
+* [[Lambaye]]
+* [[Ndangalma]]
+* [[Ndondol]]
+* [[Ngogom]]
+* [[Ngoye]]
+* [[Réfane]]
+* [[Thiakhar]]
+
+=== [[Diourbel Department]] ===
+* [[Diourbel]]
+* [[Gade Escale]]
+* [[Keur Ngalgou]]
+* [[Ndankh Sene|Dankh Sène]]
+* [[Ndindy]]
+* [[Ndoulo]]
+* [[Ngohe|Ngohé]]
+* [[Patar, Diourbel|Patar]]
+* [[Taïba Moutoupha]]
+* [[Tocky Gare|Tocky-Gare]]
+* [[Touba Lappé]]
+* [[Toure Mbonde|Touré Mbonde]]
+
+=== [[Mbacké Department]] ===
+* [[Dalla Ngabou]]
+* [[Darou Nahim]]
+* [[Darou Salam Typ]]
+* [[Dendeye Gouy Gui|Dendey Gouyegui]]
+* [[Kael, Senegal|Kael]]
+* [[Madina, Senegal|Madina]]
+* [[Mbacké]]
+* [[Missirah, Diourbel|Missirah]]
+* [[Ndioumane]]
+* [[Nghaye]]
+* [[Sadio]]
+* [[Taïba Thiékène]]
+* [[Taïf, Senegal|Taïf]]
+* [[Touba Fall]]
+* [[Touba Mboul]]
+* [[Touba Mosquée]]
+
+== [[Fatick Region]] ==
+=== [[Fatick Department]] ===
+* [[Diakhao]]
+* [[Diaoulé]]
+* [[Diarrère]]
+* [[Diofior]]
+* [[Diouroup]]
+* [[Djilasse]]
+* [[Fatick]]
+* [[Fimela]]
+* [[Loul Sessène|Loul Séssène]]
+* [[Mbéllacadiao]]
+* [[Ndiob]]
+* [[Ngayokhème]]
+* [[Niakhar]]
+* [[Palmarin Facao|Palmarin]]
+* [[Patar Sine|Patar]]
+* [[Tattaguine]]
+* [[Thiaré Ndialgui]]
+
+=== [[Foundiougne Department]] ===
+* [[Bassoul]]
+* [[Diagane Barka]]
+* [[Dionewar]]
+* [[Diossong]]
+* [[Djilor]]
+* [[Djirnda]]
+* [[Foundiougne]]
+* [[Karang Poste]]
+* [[Keur Saloum Diané]]
+* [[Keur Samba Guèye]]
+* [[Mbam, Senegal|Mbam]]
+* [[Niassène]]
+* [[Nioro Alassane Tall]]
+* [[Passy (Sénégal)|Passy]]
+* [[Sokone]]
+* [[Soum (Sénégal)|Soum]]
+* [[Toubacouta]]
+
+=== [[Gossas Department]] ===
+* [[Colobane, Fatick|Colobane]]
+* [[Gossas]]
+* [[Mbar, Senegal|Mbar]]
+* [[Ndiène Lagane]]
+* [[Ouadiour]]
+* [[Patar Lia]]
+
+== [[Kaffrine Region]] ==
+=== [[Birkelane Department]] ===
+* [[Birkilane]]
+* [[Diamal]]
+* [[Keur Mboucki]]
+* [[Mabo, Senegal|Mabo]]
+* [[Mbeuleup]]
+* [[Ndiognick]]
+* [[Ségré Gatta]]
+* [[Touba Mbella]]
+
+=== [[Kaffrine Department]] ===
+* [[Boulel]]
+* [[Diamagadio]]
+* [[Diokoul Mbelbouck]]
+* [[Gniby]]
+* [[Kaffrine]]
+* [[Kahi, Senegal|Kahi]]
+* [[Kathiotte]]
+* [[Médinatoul Salam 2|Médinatoul Salam II]]
+* [[Nganda]]
+
+=== [[Koungheul Department]] ===
+* [[Fass Thiékène]]
+* [[Ida Mouride]]
+* [[Koungheul]]
+* [[Lour Escale]]
+* [[Maka Yop]]
+* [[Missirah Wadène]]
+* [[Ngainthe Pathè|Gainte Pathé]]
+* [[Ribot Escale]]
+* [[Saly Escale]]
+
+=== [[Malem Hodar Department]] ===
+* [[Darou Minam 2]]
+* [[Dianké Souf]]
+* [[Khelcom]]
+* [[Malem-Hodar]]
+* [[Ndiobène Samba Lamo]]
+* [[Ndioum Ngainth|Ndioum Ngainthe]]
+* [[Sagna, Senegal|Sagna]]
+
+== [[Kaolack Region]] ==
+=== [[Guinguinéo Department]] ===
+* [[Dara Mboss]]
+* [[Fass, Senegal|Fass]]
+* [[Gagnick]]
+* [[Guinguinéo]]
+* [[Khelcom Birane]]
+* [[Mbadakhoune]]
+* [[Mboss]]
+* [[Ndiago, Senegal|Ndiago]]
+* [[Ngathie Naoudé|Ngathe Naoudé]]
+* [[Nguélou]]
+* [[Ourour]]
+* [[Panal Wolof]]
+
+=== [[Kaolack Department]] ===
+* [[Dya]]
+* [[Gandiaye]]
+* [[Kahone]]
+* [[Kaolack]]
+* [[Keur Baka]]
+* [[Latmingué]]
+* [[Ndiaffate]]
+* [[Ndiébel]]
+* [[Ndiédieng]]
+* [[Ndofane]]
+* [[Sibassor]]
+* [[Thiaré]]
+* [[Thiomby]]
+
+=== [[Nioro du Rip Department]] ===
+* [[Dabaly]]
+* [[Darou Salam, Kaolack|Darou Salam]]
+* [[Gainthe Kaye]]
+* [[Kayemor]]
+* [[Keur Maba Diakhou]]
+* [[Keur Madiabel]]
+* [[Keur Madongo]]
+* [[Keur Socé]]
+* [[Médina Sabakh]]
+* [[Ndramé Escale]]
+* [[Ngayène]]
+* [[Nioro du Rip]]
+* [[Paoskoto]]
+* [[Porokhane]]
+* [[Taïba Niassène]]
+* [[Wack Ngouna]]
+
+== [[Kédougou Region]] ==
+=== [[Kédougou Department]] ===
+* [[Bandafassi]]
+* [[Dimboli]]
+* [[Dindefelo]]
+* [[Fongolimbi]]
+* [[Kédougou]]
+* [[Ninéfécha]]
+* [[Tomboroncoto]]
+
+=== [[Salémata Department]] ===
+* [[Dar Salam, Kédougou|Dar Salam]]
+* [[Ethiolo]]
+* [[Oubadji]]
+* [[Salémata]]
+
+=== [[Saraya Department]] ===
+* [[Bembou]]
+* [[Dakateli]]
+* [[Kévoye]]
+* [[Khossanto]]
+* [[Médina Baffé]]
+* [[Missirah Sirimana]]
+* [[Sabodala]]
+* [[Saraya, Senegal|Saraya]]
+
+== [[Kolda Region]] ==
+=== [[Kolda Department]] ===
+* [[Bagadadji]]
+* [[Coumbacara]]
+* [[Dabo, Senegal|Dabo]]
+* [[Dialambéré]]
+* [[Dioulacolon]]
+* [[Guiro Yéro Bocar]]
+* [[Kolda]]
+* [[Mampatim]]
+* [[Médina Chérif]]
+* [[Médina El Hadj]]
+* [[Salikégné]]
+* [[Saré Bidji]]
+* [[Saré Yoba Diéga]]
+* [[Tankanto Escale]]
+* [[Thiétty]]
+
+=== [[Médina Yoro Foulah Department]] ===
+* [[Bignarabé]]
+* [[Bourouco]]
+* [[Dinguiraye, Kolda|Dinguiraye]]
+* [[Kéréwane]]
+* [[Koulinto]]
+* [[Médina Yoro Foulah]]
+* [[Ndorna]]
+* [[Niaming]]
+* [[Pata, Senegal|Pata]]
+
+=== [[Vélingara Department]] ===
+* [[Badion, Senegal|Badion]]
+* [[Bonconto (commune)|Bonconto]]
+* [[Diaobé-Kabendou]]
+* [[Fafacourou]]
+* [[Kandia, Kolda|Kandia]]
+* [[Kandiaye]]
+* [[Kounkané]]
+* [[Linkéring]]
+* [[Médina Gounass]]
+* [[Némataba]]
+* [[Ouassadou]]
+* [[Pakour]]
+* [[Paroumba]]
+* [[Saré Coly Sallé]]
+* [[Sinthiang Koundara]]
+* [[Vélingara]]
+
+== [[Louga Region]] ==
+=== [[Kébémer Department]] ===
+* [[Bandegne Ouolof]]
+* [[Darou Marnane]]
+* [[Darou Mousty]]
+* [[Diokoul Diawrigne]]
+* [[Guéoul]]
+* [[Kab Gaye]]
+* [[Kanène Ndiob]]
+* [[Kébémer]]
+* [[Loro, Senegal|Loro]]
+* [[Mbacké Cajor]]
+* [[Mbadiane]]
+* [[Ndande]]
+* [[Ndoyene]]
+* [[Ngourane Ouolof]]
+* [[Sagatta Gueth]]
+* [[Sam Yabal]]
+* [[Thieppe]]
+* [[Thiolom Fall]]
+* [[Touba Mérina]]
+
+=== [[Linguère Department]] ===
+* [[Affé Djoloff]]
+* [[Barkédji]]
+* [[Boulal, Louga|Boulal]]
+* [[Dahra]]
+* [[Dealy]]
+* [[Dodji]]
+* [[Gassane]]
+* [[Kamb]]
+* [[Labgar]]
+* [[Linguère]]
+* [[Mbeuleukhé]]
+* [[Mboula, Senegal|Mboula]]
+* [[Ouarkhokh]]
+* [[Sagatta Djolof]]
+* [[Téssékéré Forage]]
+* [[Thiamène Djolof]]
+* [[Thiarny]]
+* [[Thiel, Senegal|Thiel]]
+* [[Yang-Yang]]
+
+=== [[Louga Department]] ===
+* [[Coki]]
+* [[Gande, Senegal|Gande]]
+* [[Guet Ardo]]
+* [[Kéle Gueye]]
+* [[Keur Momar Sarr]]
+* [[Léona]]
+* [[Louga]]
+* [[Mbédiène]]
+* [[Ndiagne]]
+* [[Nguer Malal]]
+* [[Ngueune Sarr]]
+* [[Nguidilé]]
+* [[Niomré]]
+* [[Pété Ouarack]]
+* [[Sakal, Senegal|Sakal]]
+* [[Syer, Senegal|Syer]]
+* [[Thiamène Cayor]]
+
+== [[Matam Region]] ==
+=== [[Kanel Department]] ===
+* [[Aouré]]
+* [[Bokiladji]]
+* [[Dembancané]]
+* [[Hamady Ounaré]]
+* [[Kanel]]
+* [[Ndendory]]
+* [[Odobéré]]
+* [[Orkadiere]]
+* [[Semmé]]
+* [[Sinthiou Bamambé-Banadji]]
+* [[Waoundé]]
+* [[Wouro Sidy]]
+
+=== [[Matam Department]] ===
+* [[Agnams]]
+* [[Bokidiawé]]
+* [[Dabia, Senegal|Dabia]]
+* [[Matam, Senegal|Matam]]
+* [[Nabadji Civol]]
+* [[Nguidjilone]]
+* [[Ogo, Matam|Ogo]]
+* [[Oréfondé]]
+* [[Ourossogui]]
+* [[Thilogne]]
+
+=== [[Ranérou Ferlo Department]] ===
+* [[Lougré Thioly]]
+* [[Oudalaye]]
+* [[Ranérou]]
+* [[Vélingara, Matam|Vélingara]]
+
+== [[Saint-Louis Region]] ==
+=== [[Dagana Department, Senegal|Dagana Department]] ===
+* [[Bokhol]]
+* [[Dagana, Senegal|Dagana]]
+* [[Diama, Senegal|Diama]]
+* [[Gaé]]
+* [[Mbane]]
+* [[Ndombo Sandjiry]]
+* [[Ngnith]]
+* [[Richard-Toll]]
+* [[Ronkh]]
+* [[Ross Béthio]]
+* [[Rosso, Senegal|Rosso]]
+
+=== [[Podor Department]] ===
+* [[Aéré Lao]]
+* [[Bodé Lao]]
+* [[Boké Dialloubé]]
+* [[Démette]]
+* [[Dodel]]
+* [[Doumga Lao]]
+* [[Fanaye]]
+* [[Galoya Toucouleur]]
+* [[Gamadji Saré]]
+* [[Golléré]]
+* [[Guédé Chantier]]
+* [[Guédé Village]]
+* [[Madina Diathbé]]
+* [[Mbolo Birane]]
+* [[Mboumba]]
+* [[Méry, Senegal|Méry]]
+* [[Ndiandane]]
+* [[Ndiayène Peindao]]
+* [[Ndioum]]
+* [[Pété]]
+* [[Podor]]
+* [[Walaldé]]
+
+=== [[Saint-Louis department|Saint-Louis Department]] ===
+* [[Fass Ngom]]
+* [[Gandon, Senegal|Gandon]]
+* [[Mpal, Senegal|Mpal]]
+* [[Ndiébène Gandiole]]
+* [[Saint-Louis, Senegal|Saint-Louis]]
+
+== [[Sédhiou Region]] ==
+=== [[Bounkiling Department]] ===
+* [[Bona (Sénégal)|Bona]]
+* [[Bounkiling]]
+* [[Diacounda]]
+* [[Diambati]]
+* [[Diaroumé]]
+* [[Djinany]]
+* [[Faoune]]
+* [[Inor, Senegal|Inor]]
+* [[Kandion Mangana]]
+* [[Madina Wandifa]]
+* [[Ndiamacouta]]
+* [[Ndiamalathiel]]
+* [[Tankon]]
+
+=== [[Goudomp Department]] ===
+* [[Baghère]]
+* [[Diattacounda]]
+* [[Diouboudou]]
+* [[Djibanar]]
+* [[Goudomp]]
+* [[Kaour]]
+* [[Karantaba]]
+* [[Kolibantang]]
+* [[Mangaroungou Santo]]
+* [[Niagha]]
+* [[Samine, Senegal|Samine]]
+* [[Simbandi Balante]]
+* [[Simbandi Brassou]]
+* [[Tanaff]]
+* [[Yarang Balante]]
+
+=== [[Sédhiou Department]] ===
+* [[Bambaly]]
+* [[Bémet Bidjini]]
+* [[Boghall, Senegal|Boghall]]
+* [[Diannah Ba]]
+* [[Diannah Malary]]
+* [[Diendé]]
+* [[Djibabouya]]
+* [[Djiredji]]
+* [[Koussy]]
+* [[Marsassoum]]
+* [[Oudoucar]]
+* [[Sakar, Senegal|Sakar]]
+* [[Sama Kanta Peulh]]
+* [[Sansamba]]
+* [[Sédhiou]]
+
+== [[Tambacounda Region]] ==
+=== [[Bakel Department]] ===
+* [[Bakel, Senegal|Bakel]]
+* [[Ballou, Senegal|Ballou]]
+* [[Bélé, Senegal|Bélé]]
+* [[Diawara, Senegal|Diawara]]
+* [[Gabou]]
+* [[Gathiary]]
+* [[Kidira]]
+* [[Madina Foulbé]]
+* [[Moudéry]]
+* [[Sadatou]]
+* [[Sinthiou Fissa]]
+* [[Toumboura]]
+
+=== [[Goudiry Department]] ===
+* [[Bala, Senegal|Bala]]
+* [[Bani Israël]]
+* [[Boutoucoufara]]
+* [[Boynguel Bamba]]
+* [[Dianké Makha]]
+* [[Dougué]]
+* [[Goumbayél]]
+* [[Goudiry]]
+* [[Koar]]
+* [[Komoti]]
+* [[Kothiary]]
+* [[Koulor]]
+* [[Koussan, Senegal|Koussan]]
+* [[Sinthiou Bocar Ali]]
+* [[Sinthiou Mamadou Boubou]]
+
+=== [[Koumpentoum Department]] ===
+* [[Bamba Thialène]]
+* [[Kahène]]
+* [[Koumpentoum]]
+* [[Kouthia Gaydi]]
+* [[Kouthiaba Wolof]]
+* [[Malem Niani]]
+* [[Méréto]]
+* [[Ndame]]
+* [[Niani Toucouleur]]
+* [[Pass Koto]]
+* [[Payar]]
+* [[Sinthiou Malème]]
+
+=== [[Tambacounda Department]] ===
+* [[Dialacoto]]
+* [[Koussanar]]
+* [[Makacolibantang]]
+* [[Missirah, Tambacounda|Missirah]]
+* [[Ndoga Babacar]]
+* [[Néttéboulou]]
+* [[Tambacounda]]
+
+== [[Thiès Region]] ==
+=== [[M'bour Department]] ===
+* [[Diass (rural community)|Diass]]
+* [[Fissel]]
+* [[Joal-Fadiouth]]
+* [[M'Bour]]
+* [[Malicounda]]
+* [[Ndiaganiao]]
+* [[Ngaparou]]
+* [[Nguékhokh]]
+* [[Nguéniène]]
+* [[Popenguine-Ndayane]]
+* [[Saly Portudal|Saly]]
+* [[Sandiara]]
+* [[Séssène]]
+* [[Sindia, Senegal|Sindia]]
+* [[Somone]]
+* [[Thiadiaye]]
+
+=== [[Thiès Department]] ===
+* [[Diender]]
+* [[Fandène]]
+* [[Kayar, Senegal|Kayar]]
+* [[Keur Moussa (rural community)|Keur Moussa]]
+* [[Khombole]]
+* [[Ndiéyène Sirah]]
+* [[Ngoudiane]]
+* [[Notto]]
+* [[Pout, Senegal|Pout]]
+* [[Tassette]]
+* [[Thiénaba]]
+* [[Thiès Est]]
+* [[Thiès Nord]]
+* [[Thiès Ouest]]
+* [[Touba Toul]]
+* [[Yaboyabo]]
+
+=== [[Tivaouane Department]] ===
+* [[Chérif Lo]]
+* [[Darou Khoudoss]]
+* [[Koul, Senegal|Koul]]
+* [[Mbayène]]
+* [[Mboro]]
+* [[Meckhe]]
+* [[Méouane]]
+* [[Mérina Dakhar]]
+* [[Mont Rolland]]
+* [[Ngandiouf]]
+* [[Niakhene]]
+* [[Notto Gouye Diama]]
+* [[Pambal]]
+* [[Pékèsse]]
+* [[Pire Goureye]]
+* [[Taïba Ndiaye]]
+* [[Thilmakha]]
+* [[Tivaouane]]
+
+== [[Ziguinchor Region]] ==
+=== [[Bignona Department]] ===
+* [[Balinghore]]
+* [[Bignona]]
+* [[Boutoupa-Camaracounda]]
+* [[Diégoune]]
+* [[Diouloulou]]
+* [[Djibidione]]
+* [[Djinaky]]
+* [[Kafountine]]
+* [[Kartiack]]
+* [[Kataba 1]]
+* [[Mangagoulack]]
+* [[Niamone]]
+* [[Oulampane]]
+* [[Ouonck]]
+* [[Sindian, Senegal|Sindian]]
+* [[Suelle]]
+* [[Tenghory]]
+* [[Thionck Essyl]]
+
+=== [[Oussouye Department]] ===
+* [[Diembéring (rural community)|Diembéring]]
+* [[Enampore]]
+* [[Mlomp]]
+* [[Oukout]]
+* [[Oussouye]]
+* [[Santhiaba Manjacque]]
+
+=== [[Ziguinchor Department]] ===
+* [[Adéane]]
+* [[Coubalan]]
+* [[Niaguis]]
+* [[Nyassia]]
+* [[Ziguinchor]]
+
+== See also ==
+* [[Rural communities of Senegal]]
+
+== Notes ==
+{{notelist}}
+
+== References ==
+{{reflist}}
+
+=== Bibliography ===
+* {{cite book |last=Bonnardel |first=Régine |year=1992 |title=Saint-Louis du Sénégal : mort ou naissance ? |trans-title=Saint-Louis of Senegal: Death or Birth? |publisher=L'Harmattan |location=Paris |isbn=2-7384-0781-1}}
+* {{cite web |last=Brinkhoff |first=Thomas |title=Senegal: Municipal Division (Communes and Rural Communities) |work=City Population |url=https://www.citypopulation.de/en/senegal/mun/admin/ |access-date=18 March 2026}}
+* {{cite book |last=Hesseling |first=Gerti |year=2000 |title=Histoire politique du Sénégal : institutions, droit et société |trans-title=Political History of Senegal: Institutions, Law and Society |others=Translated by Catherine Miginiac |publisher=Karthala |isbn=2865371182}}
+* [https://web.archive.org/web/20090522233228/http://www.senegalaisement.com/senegal/decoupage_administratif_senegal.html Senegalaisement.com] {{in lang|fr}}
+
+{{Senegal topics|state=collapsed}}
+
+[[Category:Communes of Senegal| ]]
+[[Category:Fourth-level administrative divisions by country|Senegal]]

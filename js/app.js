@@ -1,43 +1,61 @@
 (function(){
   var STATUS_LABEL = { doc:"À documenter", env:"Demande envoyée", obt:"Réponse obtenue", ref:"Refus opposé" };
   var STATUS_CLASS = { doc:"b-doc", env:"b-env", obt:"b-obt", ref:"b-ref" };
-  var STATUS_VAR = { doc:"--status-neutral", env:"--status-pending", obt:"--status-success", ref:"--status-danger" };
 
+  /* Départements : géographie (carte) uniquement — pas de statut ni de
+     fiche propre. Le suivi citoyen se fait au niveau commune. */
+  var departements = DEPARTEMENTS.map(function(d){
+    return { name:d[0], region:d[1], x:d[2], y:d[3] };
+  });
+  var departementByName = {};
+  departements.forEach(function(d){ departementByName[d.name] = d; });
+
+  /* Communes : l'unité de suivi citoyen (statut, maire, référent...). */
   var communes = COMMUNES.map(function(c){
-    return { name:c[0], region:c[1], status:c[2], x:c[3], y:c[4] };
+    return { name:c[0], departement:c[1], region:c[2], status:c[3] };
   });
 
   document.getElementById('senegal-outline').setAttribute('d', SENEGAL_OUTLINE);
 
-  var regions = Array.from(new Set(communes.map(function(c){return c.region;}))).sort(function(a,b){return a.localeCompare(b,'fr');});
+  var regions = Array.from(new Set(departements.map(function(d){return d.region;}))).sort(function(a,b){return a.localeCompare(b,'fr');});
   var regionSelect = document.getElementById('regionSelect');
   regions.forEach(function(r){
     var o = document.createElement('option'); o.value = r; o.textContent = r; regionSelect.appendChild(o);
   });
 
+  var departementNames = departements.map(function(d){return d.name;}).sort(function(a,b){return a.localeCompare(b,'fr');});
+  var departementSelect = document.getElementById('departementSelect');
+  departementNames.forEach(function(name){
+    var o = document.createElement('option'); o.value = name; o.textContent = name; departementSelect.appendChild(o);
+  });
+
   var pinsLayer = document.getElementById('pinsLayer');
   var communeList = document.getElementById('communeList');
 
-  communes.forEach(function(c, i){
+  departements.forEach(function(d, i){
     var g = document.createElementNS('http://www.w3.org/2000/svg','g');
     g.setAttribute('class','pin');
     g.setAttribute('tabindex','0');
     g.setAttribute('role','button');
-    g.setAttribute('aria-label', c.name + ', région ' + c.region + ', ' + STATUS_LABEL[c.status]);
+    g.setAttribute('aria-label', 'Département de ' + d.name + ', région ' + d.region + ' — filtrer ses communes');
     g.dataset.idx = i;
+    g.dataset.name = d.name;
 
     var circle = document.createElementNS('http://www.w3.org/2000/svg','circle');
     circle.setAttribute('class','dot');
-    circle.setAttribute('cx', c.x); circle.setAttribute('cy', c.y); circle.setAttribute('r', 5.5);
-    circle.setAttribute('fill', 'var(' + STATUS_VAR[c.status] + ')');
+    circle.setAttribute('cx', d.x); circle.setAttribute('cy', d.y); circle.setAttribute('r', 5.5);
     g.appendChild(circle);
 
     var title = document.createElementNS('http://www.w3.org/2000/svg','title');
-    title.textContent = c.name + ' — ' + c.region + ' — ' + STATUS_LABEL[c.status];
+    title.textContent = 'Département de ' + d.name + ' — ' + d.region;
     g.appendChild(title);
 
-    g.addEventListener('click', function(){ openModal(i); });
-    g.addEventListener('keydown', function(e){ if(e.key==='Enter' || e.key===' '){ e.preventDefault(); openModal(i); } });
+    function selectDept(){
+      departementSelect.value = (departementSelect.value === d.name) ? '' : d.name;
+      applyFilters();
+    }
+    g.addEventListener('click', selectDept);
+    g.addEventListener('keydown', function(e){ if(e.key==='Enter' || e.key===' '){ e.preventDefault(); selectDept(); } });
 
     pinsLayer.appendChild(g);
   });
@@ -55,7 +73,7 @@
       var row = document.createElement('button');
       row.className = 'row';
       row.type = 'button';
-      row.innerHTML = '<span><span class="name">'+item.c.name+'</span><br><span class="region">'+item.c.region+'</span></span>' +
+      row.innerHTML = '<span><span class="name">'+item.c.name+'</span><br><span class="region">'+item.c.departement+' · '+item.c.region+'</span></span>' +
         '<span class="badge '+STATUS_CLASS[item.c.status]+'">'+STATUS_LABEL[item.c.status]+'</span>';
       row.addEventListener('click', function(){ openModal(item.i); });
       communeList.appendChild(row);
@@ -64,33 +82,38 @@
 
   function applyFilters(){
     var q = document.getElementById('searchInput').value.trim().toLowerCase();
+    var dept = departementSelect.value;
     var region = regionSelect.value;
     var status = document.getElementById('statusSelect').value;
 
-    var visibleIdx = {};
+    var matchedDepts = {};
     var filteredForList = [];
 
     communes.forEach(function(c, i){
       var match = true;
       if(q && c.name.toLowerCase().indexOf(q) === -1) match = false;
+      if(dept && c.departement !== dept) match = false;
       if(region && c.region !== region) match = false;
       if(status && c.status !== status) match = false;
-      if(match){ visibleIdx[i] = true; filteredForList.push({c:c, i:i}); }
+      if(match){ matchedDepts[c.departement] = true; filteredForList.push({c:c, i:i}); }
     });
 
     Array.prototype.forEach.call(pinsLayer.children, function(g){
-      var i = g.dataset.idx;
-      if(visibleIdx[i]){ g.classList.remove('dim'); } else { g.classList.add('dim'); }
+      var name = g.dataset.name;
+      g.classList.toggle('dim', !matchedDepts[name]);
+      g.classList.toggle('active', dept === name);
     });
 
     renderList(filteredForList);
   }
 
   document.getElementById('searchInput').addEventListener('input', applyFilters);
+  departementSelect.addEventListener('change', applyFilters);
   regionSelect.addEventListener('change', applyFilters);
   document.getElementById('statusSelect').addEventListener('change', applyFilters);
   document.getElementById('resetBtn').addEventListener('click', function(){
     document.getElementById('searchInput').value = '';
+    departementSelect.value = '';
     regionSelect.value = '';
     document.getElementById('statusSelect').value = '';
     applyFilters();
@@ -99,9 +122,9 @@
   var modalBack = document.getElementById('modalBack');
   function openModal(i){
     var c = communes[i];
-    var details = (typeof COMMUNE_DETAILS !== 'undefined' && COMMUNE_DETAILS[c.name]) || {};
+    var details = (typeof COMMUNE_DETAILS !== 'undefined' && COMMUNE_DETAILS[c.name + '|' + c.departement]) || {};
     document.getElementById('modalName').textContent = c.name;
-    document.getElementById('modalRegion').textContent = 'Région de ' + c.region;
+    document.getElementById('modalRegion').textContent = 'Département de ' + c.departement + ' — Région de ' + c.region;
     var badge = document.getElementById('modalBadge');
     badge.textContent = STATUS_LABEL[c.status];
     badge.className = 'badge ' + STATUS_CLASS[c.status];

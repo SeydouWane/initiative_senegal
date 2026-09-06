@@ -6,12 +6,17 @@ Site vitrine de l'Initiative citoyenne pour la transparence des communes (Séné
 
 ```
 initiative_senegal/
-├── index.html               page unique du site
-├── css/styles.css            styles (couleurs, typographie, mise en page)
-├── js/data.js                 données des 45 communes + fiches (maire...) + tracé de la carte
-├── js/app.js                   logique de la carte, des filtres et des fiches commune
-├── images/logo.png            votre logo
-├── scripts/project-map.js      script utilisé pour générer les coordonnées de js/data.js
+├── index.html                 page unique du site
+├── css/styles.css              styles (couleurs, typographie, mise en page)
+├── js/data.js                   données : 46 départements (carte) + 553 communes (suivi)
+├── js/app.js                     logique de la carte, des filtres et des fiches
+├── js/config.js                  identifiant FormSubmit (formulaire référent)
+├── images/                      logo, favicon, écran d'entrée, photos
+├── scripts/
+│   ├── project-map.js            génère le tracé + les coordonnées des départements
+│   ├── parse-communes.js         génère la liste des 553 communes (voir ci-dessous)
+│   ├── communes_raw.wiki         source : wikitexte de la page Wikipédia (EN) "Communes of Senegal"
+│   └── communes_parsed.json      sortie structurée région → département → communes
 └── README.md
 ```
 
@@ -26,59 +31,105 @@ python -m http.server 8000
 
 puis ouvrez `http://localhost:8000`.
 
+## Modèle de données : départements (carte) vs communes (suivi)
+
+Le Sénégal compte 14 régions, 46 départements (depuis la création du
+département de Keur Massar en 2021) et 557 communes — le territoire est
+intégralement communalisé depuis l'Acte III de la décentralisation (loi
+n° 2013-10). Chaque commune est une collectivité territoriale avec son
+propre maire élu, son conseil municipal, son budget — c'est donc bien le
+niveau **commune** qui porte le suivi citoyen (statut, maire, référent,
+documents), comme le prévoit la loi citée sur le site (article 6).
+
+Pour que la carte reste lisible (557 points sur une carte à l'échelle du
+pays serait illisible), le site fonctionne à **deux niveaux** :
+
+- **`DEPARTEMENTS`** (46, dans `js/data.js`) : uniquement pour le tracé de
+  la carte. Chaque point cliquable filtre la liste sur les communes de ce
+  département — il n'a pas de statut ni de fiche propre.
+- **`COMMUNES`** (553, dans `js/data.js`) : l'unité de suivi réelle, avec
+  région, département, statut, et éventuellement une fiche détaillée dans
+  `COMMUNE_DETAILS`.
+
+## Données communales : fiabilité et sources
+
+La liste des 553 communes est générée à partir du wikitexte de la page
+Wikipédia (anglais) *"Communes of Senegal"* (`scripts/communes_raw.wiki`),
+elle-même basée sur les décrets de création successifs des communes et sur
+le découpage post-Acte III. Pour la régénérer ou la mettre à jour :
+
+```
+node scripts/parse-communes.js
+```
+
+Le script relit `communes_raw.wiki` et régénère
+`scripts/communes_parsed.json` (région → département → liste de communes),
+qu'il faut ensuite reformater en tableaux `[nom, département, région, "doc"]`
+dans `js/data.js` (variable `COMMUNES`).
+
+**⚠️ Cette liste compte 553 entrées, pas 557 pile** — l'écart (~4 communes)
+vient probablement de créations très récentes pas encore reflétées sur
+Wikipédia. **Avant toute publication officielle**, recoupez cette liste
+avec une source officielle (ANSD, Journal officiel, ou liste du ministère
+des Collectivités territoriales) pour combler l'écart et corriger
+d'éventuelles erreurs de rattachement département/région.
+
+Note technique : deux communes distinctes peuvent porter le même nom dans
+des départements différents (ex. deux communes appelées à l'origine
+« Vélingara », l'une chef-lieu du département de Vélingara, l'autre dans
+Ranérou Ferlo — renommée ici « Vélingara Ferlo » pour éviter toute
+confusion). C'est pourquoi `COMMUNE_DETAILS` (les fiches maire) est indexé
+par la clé composite `"Nom|Département"`, pas seulement par nom.
+
 ## La carte
 
-Le tracé du Sénégal (`SENEGAL_OUTLINE`) et la position de chaque commune dans
-`js/data.js` sont calculés par projection équirectangulaire de vraies
-coordonnées géographiques (frontière officielle Natural Earth pour le pays,
-coordonnées Wikipédia/officielles pour les 45 communes) — ce n'est plus un
-dessin approximatif. Chaque point (pin) est cliquable et ouvre la fiche de la
-commune, sur la carte comme dans la liste.
-
-Si vous devez recalculer les coordonnées (nouvelle commune, correction d'une
-position), modifiez la liste `towns` dans `scripts/project-map.js` puis :
+Le tracé du Sénégal (`SENEGAL_OUTLINE`) et la position de chaque
+département dans `js/data.js` sont calculés par projection équirectangulaire
+de vraies coordonnées géographiques (frontière officielle Natural Earth
+pour le pays, coordonnées Wikipédia/officielles pour les chefs-lieux de
+département). Si vous devez recalculer ces coordonnées (nouveau
+département, correction d'une position), modifiez la liste `towns` dans
+`scripts/project-map.js` puis :
 
 ```
 node scripts/project-map.js
 ```
 
 Le script affiche le nouveau `SENEGAL_OUTLINE` et le nouveau tableau
-`COMMUNES` à recopier dans `js/data.js`.
+`DEPARTEMENTS` à recopier dans `js/data.js`.
 
-## Mettre à jour les communes
+## Mettre à jour le statut d'une commune
 
-Toutes les données affichées sur la carte (nom, région, statut, position)
-sont dans `js/data.js`. Les statuts possibles sont :
+Tout est dans `js/data.js`, variable `COMMUNES` (`[nom, département,
+région, statut]`). Statuts possibles :
 
-- `doc` — à documenter (statut par défaut de toutes les communes actuellement :
-  aucune démarche réelle n'a encore été engagée)
+- `doc` — à documenter (statut par défaut de toutes les communes
+  actuellement : aucune démarche réelle n'a encore été engagée)
 - `env` — demande envoyée
 - `obt` — réponse obtenue
 - `ref` — refus opposé
 
-Mettez à jour le statut d'une commune dans `COMMUNES` au fil des démarches
-réelles suivies par vos référents.
-
 ## Fiches détaillées par commune
 
-Les fiches (ouvertes en cliquant sur une commune) affichent :
+Les fiches (ouvertes en cliquant une commune dans la liste) affichent :
 
-- **Maire** — renseigné dans `js/data.js` (objet `COMMUNE_DETAILS`) pour 28
-  des 45 communes, à partir de recherches documentaires sur les élections
-  locales de janvier 2022 (et leurs remplacements connus depuis : Dakar,
-  Ziguinchor). **Ces informations doivent être vérifiées avant toute
-  publication officielle** — un mandat peut avoir changé de titulaire
-  (décès, destitution, démission) sans que cela ait été retrouvé lors de la
-  recherche. Les 17 communes restantes n'ont pas de maire renseigné
-  (aucune source fiable trouvée) : complétez `COMMUNE_DETAILS` au fur et à
-  mesure de vos vérifications.
+- **Maire** — renseigné dans `COMMUNE_DETAILS` (clé `"Nom|Département"`)
+  pour 21 grandes communes/villes, à partir de recherches documentaires sur
+  les élections locales de janvier 2022 (et remplacements connus depuis :
+  Dakar, Ziguinchor). **À vérifier avant toute publication officielle** —
+  un mandat peut avoir changé de titulaire sans que cela ait été retrouvé
+  lors de la recherche. La grande majorité des 553 communes n'a pas de
+  maire renseigné (aucune base de données publique centralisée des
+  résultats commune par commune n'a été trouvée) : à compléter au format
+  ```js
+  "Nom de la commune|Nom du département": { maire: "Nom Prénom", note: "source / précision" }
+  ```
 - **Référent local** et **Documents obtenus** — volontairement laissés à
   « Poste à pourvoir » / « Aucun document répertorié » : le réseau de
   référents n'est pas encore constitué et aucune démarche réelle n'a encore
-  abouti. Une fois que ces données existeront, il faudra les ajouter à
-  `COMMUNE_DETAILS` (dans `js/data.js`) et adapter `openModal()` dans
-  `js/app.js` pour les afficher, plutôt que d'inventer des informations sur
-  de vraies communes.
+  abouti. À ajouter dans `COMMUNE_DETAILS` (et adapter `openModal()` dans
+  `js/app.js`) au fil des vraies démarches, plutôt que d'inventer des
+  informations sur de vraies communes.
 
 ## Formulaire référent (« Se porter volontaire »)
 
@@ -106,6 +157,14 @@ Le formulaire inclut un champ piège anti-spam (`_honey`, invisible) et
 envoie un objet d'email fixe. Pour changer le texte d'intro, les champs ou
 le style, voir la section `#refModalBack` de `index.html`, `.ref-form` dans
 `css/styles.css`, et la fin de `js/app.js`.
+
+## Écran d'entrée et photos
+
+- `.cover` (`images/image.png`) : écran plein écran affiché à l'arrivée sur
+  le site, avec liseré tricolore (vert/jaune/rouge), titre, tagline et
+  flèche de défilement vers le reste du site.
+- Section `#photos` : deux photos de terrain (`images/pirogues-1.jpg`,
+  `images/pirogues-2.jpg`).
 
 ## Ressources pédagogiques
 

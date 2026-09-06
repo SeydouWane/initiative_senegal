@@ -1,78 +1,130 @@
-/* Données des 45 communes suivies par l'initiative.
-   Chaque entrée : [nom, région, statut, x, y]
-   statut : "doc" = à documenter · "env" = demande envoyée
-            "obt" = réponse obtenue · "ref" = refus opposé
-   Tous les statuts sont pour l'instant à "doc" (à documenter) : aucune
-   démarche réelle n'a encore été engagée par le réseau de référents.
-   Ils seront mis à jour commune par commune au fil de la collecte.
+/* ===========================================================
+   Données géographiques : 46 départements (pour le tracé de la
+   carte et les points cliquables) + 553 communes (pour le suivi
+   citoyen à proprement parler : statut, maire, référent...).
 
-   x, y : position sur la carte (viewBox 0 0 600 490), calculées par
-   projection équirectangulaire des coordonnées géographiques réelles
-   (longitude/latitude) de chaque commune — voir scripts/project-map.js.
-   Le tracé du pays (SENEGAL_OUTLINE) provient des frontières réelles
-   du Sénégal (Natural Earth, admin niveau 0), projetées avec la même
-   méthode, et n'est donc plus une forme dessinée à main levée. */
+   Depuis l'Acte III de la décentralisation (loi n° 2013-10 du
+   28 décembre 2013), tout le territoire sénégalais est communalisé :
+   le Sénégal compte 14 régions, 46 départements (depuis la création
+   du département de Keur Massar en 2021) et 557 communes.
 
-const COMMUNES = [
-  ["Dakar","Dakar","doc",30.6,223.2],["Pikine","Dakar","doc",35.8,217.2],["Guédiawaye","Dakar","doc",34.5,215.8],["Rufisque","Dakar","doc",47.3,220.9],["Bargny","Dakar","doc",50.6,222.6],
-  ["Thiès","Thiès","doc",78,213.7],["Mbour","Thiès","doc",75.8,249.3],["Tivaouane","Thiès","doc",89.1,198.5],["Joal-Fadiouth","Thiès","doc",87.6,273.6],
-  ["Diourbel","Diourbel","doc",143.3,226.4],["Mbacké","Diourbel","doc",172.7,214.5],["Touba","Diourbel","doc",175.8,208.1],
-  ["Louga","Louga","doc",144,134.7],["Kébémer","Louga","doc",123.6,155.9],["Linguère","Louga","doc",247,155.3],
-  ["Saint-Louis","Saint-Louis","doc",119.5,96],["Dagana","Saint-Louis","doc",211,48.3],["Richard-Toll","Saint-Louis","doc",192.8,53.4],
-  ["Matam","Matam","doc",419.9,130.8],["Kanel","Matam","doc",428.2,147.3],["Ourossogui","Matam","doc",413.9,135.3],
-  ["Tambacounda","Tambacounda","doc",381.7,311.6],["Bakel","Tambacounda","doc",493.5,203.1],["Goudiry","Tambacounda","doc",470,272],
-  ["Kédougou","Kédougou","doc",520.3,428.2],["Salémata","Kédougou","doc",460.7,420.8],["Saraya","Kédougou","doc",559.8,401.6],
-  ["Kolda","Kolda","doc",263.4,395.8],["Vélingara","Kolda","doc",339.9,371.2],["Médina Yoro Foulah","Kolda","doc",284.2,356.8],
-  ["Sédhiou","Sédhiou","doc",206.1,413.6],["Goudomp","Sédhiou","doc",176.9,426.1],["Bounkiling","Sédhiou","doc",192.8,380.8],
-  ["Ziguinchor","Ziguinchor","doc",139.7,425.6],["Bignona","Ziguinchor","doc",143.9,403.8],["Oussouye","Ziguinchor","doc",114.2,435],
-  ["Fatick","Fatick","doc",126.8,257.1],["Gossas","Fatick","doc",158.9,242.3],["Foundiougne","Fatick","doc",121.6,276.8],
-  ["Kaolack","Kaolack","doc",158.2,275],["Nioro du Rip","Kaolack","doc",183.5,313.6],["Guinguinéo","Kaolack","doc",169.6,264],
-  ["Kaffrine","Kaffrine","doc",206.8,279.5],["Birkelane","Kaffrine","doc",185.1,278.4],["Malem Hodar","Kaffrine","doc",230.5,281.2]
+   ⚠️ La liste des 553 communes ci-dessous est compilée à partir de
+   la page Wikipédia (EN) "Communes of Senegal" (elle-même sourcée
+   sur les décrets de création successifs et le découpage post-2013),
+   et n'est pas garantie identique aux 557 officielles à l'unité près
+   — voir le README, section "Données communales : fiabilité et
+   sources", avant toute publication officielle.
+   =========================================================== */
+
+/* 46 départements : [nom, région, x, y]. x,y = position sur la carte
+   (viewBox 0 0 600 490), projection équirectangulaire de coordonnées
+   géographiques réelles des chefs-lieux — voir scripts/project-map.js. */
+const DEPARTEMENTS = [
+  ["Dakar","Dakar",30.6,226.4],["Pikine","Dakar",35.8,220.5],["Rufisque","Dakar",47.3,224.1],["Guédiawaye","Dakar",34.5,219.1],["Keur Massar","Dakar",43.1,217.5],
+  ["Thiès","Thiès",78,217],["Mbour","Thiès",75.8,252.6],["Tivaouane","Thiès",89.1,201.8],
+  ["Diourbel","Diourbel",143.3,229.7],["Mbacké","Diourbel",172.7,217.8],["Bambey","Diourbel",123.2,225.8],
+  ["Louga","Louga",144,138],["Kébémer","Louga",123.6,159.2],["Linguère","Louga",247,158.6],
+  ["Saint-Louis","Saint-Louis",119.5,99.3],["Dagana","Saint-Louis",211,51.5],["Podor","Saint-Louis",262.5,37],
+  ["Matam","Matam",419.9,134],["Kanel","Matam",428.2,150.6],["Ranérou Ferlo","Matam",353.9,168.2],
+  ["Tambacounda","Tambacounda",381.7,314.9],["Bakel","Tambacounda",493.5,206.4],["Goudiry","Tambacounda",470,275.3],["Koumpentoum","Tambacounda",298.1,294.5],
+  ["Kédougou","Kédougou",520.3,431.5],["Salémata","Kédougou",460.7,424.1],["Saraya","Kédougou",559.8,404.9],
+  ["Kolda","Kolda",263.4,399.1],["Vélingara","Kolda",339.9,374.5],["Médina Yoro Foulah","Kolda",284.2,360.1],
+  ["Sédhiou","Sédhiou",206.1,416.9],["Goudomp","Sédhiou",176.9,429.4],["Bounkiling","Sédhiou",192.8,384.1],
+  ["Ziguinchor","Ziguinchor",139.7,428.9],["Bignona","Ziguinchor",143.9,407.1],["Oussouye","Ziguinchor",114.2,438.3],
+  ["Fatick","Fatick",126.8,260.4],["Gossas","Fatick",158.9,245.6],["Foundiougne","Fatick",121.6,280.1],
+  ["Kaolack","Kaolack",158.2,278.3],["Nioro du Rip","Kaolack",183.5,316.9],["Guinguinéo","Kaolack",169.6,267.3],
+  ["Kaffrine","Kaffrine",206.8,282.8],["Birkelane","Kaffrine",185.1,281.7],["Malem Hodar","Kaffrine",230.5,284.4],["Koungheul","Kaffrine",276,296.1]
 ];
 
 /* Tracé réel des frontières du Sénégal (Natural Earth, admin 0), projeté
-   sur le même viewBox et avec la même méthode que les communes ci-dessus. */
-const SENEGAL_OUTLINE = "M98.7,328.5 L60.4,253.8 L14,219.6 L54.9,201.4 L99.9,134.1 L121.9,84.8 L153.8,54 L199.9,62.3 L245.3,41.4 L297.1,40.3 L341.5,68.6 L403.2,94 L459.4,164.6 L520.7,230.4 L525,290.1 L543.3,345.1 L578.1,372 L586,409.1 L581.7,439 L568.3,444.4 L517.7,436.8 L510.7,447.5 L490.2,449.7 L423.4,426.3 L378.6,425.3 L206.9,421.2 L182,432 L151.2,429 L102,444.6 L86.8,371 L171.3,373.1 L193.7,359.6 L210.3,358.8 L244.8,336.7 L284.6,357 L325,358.7 L365.2,337.1 L346.4,309.4 L315.8,325.5 L286.9,325.1 L250.3,301.5 L220.8,303 L199.8,325.7 L98.7,328.5 Z";
+   sur le même viewBox et avec la même méthode que les départements ci-dessus. */
+const SENEGAL_OUTLINE = "M98.7,331.8 L60.4,257.1 L14,222.9 L54.9,204.7 L99.9,137.3 L121.9,88 L153.8,57.3 L199.9,65.6 L245.3,44.7 L297.1,43.6 L341.5,71.8 L403.2,97.2 L459.4,167.8 L520.7,233.7 L525,293.4 L543.3,348.4 L578.1,375.3 L586,412.4 L581.7,442.3 L568.3,447.7 L517.7,440.2 L510.7,450.8 L490.2,453 L423.4,429.6 L378.6,428.6 L206.9,424.6 L182,435.4 L151.2,432.3 L102,447.9 L86.8,374.3 L171.3,376.4 L193.7,362.9 L210.3,362.1 L244.8,340 L284.6,360.3 L325,362 L365.2,340.4 L346.4,312.7 L315.8,328.8 L286.9,328.4 L250.3,304.8 L220.8,306.3 L199.8,329 L98.7,331.8 Z";
 
-/* Fiches détaillées par commune. Champ "maire" : maires élus lors des
-   élections locales du 23 janvier 2022, avec mise à jour connue en cas de
-   changement (démission, destitution, décès...) constatée avant la mise
-   en ligne de cette page. Ces informations proviennent de recherches
-   documentaires (presse sénégalaise, sites officiels) et PEUVENT ÊTRE
-   DÉSUÈTES ou inexactes : à vérifier et corriger par le réseau de
-   référents avant toute publication définitive. Quand aucune source
-   fiable n'a été trouvée, le champ reste vide ("À vérifier").
-   "referent" et "documents" restent volontairement vides : le réseau de
-   référents locaux de l'initiative n'est pas encore constitué, et aucun
-   document n'a encore été obtenu — ces champs seront alimentés au fil
-   des démarches réelles. */
+/* 553 communes : [nom, département, région, statut].
+   statut : "doc" = à documenter (tout est à "doc" par défaut : aucune
+   démarche réelle n'a encore été engagée par le réseau de référents)
+   "env" = demande envoyée · "obt" = réponse obtenue · "ref" = refus opposé */
+const COMMUNES = [
+  ["Biscuiterie","Dakar","Dakar","doc"],["Cambérène","Dakar","Dakar","doc"],["Colobane / Fass / Gueule Tapée","Dakar","Dakar","doc"],["Dakar-Plateau","Dakar","Dakar","doc"],["Dieuppeul-Derklé","Dakar","Dakar","doc"],["Fann-Point E-Amitié","Dakar","Dakar","doc"],["Gorée","Dakar","Dakar","doc"],["Grand Dakar","Dakar","Dakar","doc"],["Grand Yoff","Dakar","Dakar","doc"],["Hann Bel-Air","Dakar","Dakar","doc"],["HLM","Dakar","Dakar","doc"],["Médina","Dakar","Dakar","doc"],["Mermoz-Sacré-Cœur","Dakar","Dakar","doc"],["Ngor","Dakar","Dakar","doc"],["Ouakam","Dakar","Dakar","doc"],["Parcelles Assainies","Dakar","Dakar","doc"],["Patte d'Oie","Dakar","Dakar","doc"],["Sicap-Liberté","Dakar","Dakar","doc"],["Yoff","Dakar","Dakar","doc"],
+  ["Golf Sud","Guédiawaye","Dakar","doc"],["Médina Gounass","Guédiawaye","Dakar","doc"],["Ndiarème Limamoulaye","Guédiawaye","Dakar","doc"],["Sam Notaire","Guédiawaye","Dakar","doc"],["Wakhinane Nimzatt","Guédiawaye","Dakar","doc"],
+  ["Dalifort","Pikine","Dakar","doc"],["Diacksao","Pikine","Dakar","doc"],["Diamaguène / Sicap Mbao","Pikine","Dakar","doc"],["Djidah Thiaroye Kaw","Pikine","Dakar","doc"],["Guinaw Rail Nord","Pikine","Dakar","doc"],["Guinaw Rail Sud","Pikine","Dakar","doc"],["Mbao","Pikine","Dakar","doc"],["Pikine Est","Pikine","Dakar","doc"],["Pikine Ouest","Pikine","Dakar","doc"],["Pikine Sud","Pikine","Dakar","doc"],["Thiaroye-Gare","Pikine","Dakar","doc"],["Thiaroye-sur-Mer","Pikine","Dakar","doc"],
+  ["Bambylor","Rufisque","Dakar","doc"],["Bargny","Rufisque","Dakar","doc"],["Diamniadio","Rufisque","Dakar","doc"],["Rufisque Est","Rufisque","Dakar","doc"],["Rufisque Nord","Rufisque","Dakar","doc"],["Rufisque Ouest","Rufisque","Dakar","doc"],["Sangalkam","Rufisque","Dakar","doc"],["Sébikhotane","Rufisque","Dakar","doc"],["Sendou","Rufisque","Dakar","doc"],["Tivaouane Peulh-Niaga","Rufisque","Dakar","doc"],["Yène","Rufisque","Dakar","doc"],
+  ["Jaxaay-Parcelles","Keur Massar","Dakar","doc"],["Keur Massar Nord","Keur Massar","Dakar","doc"],["Keur Massar Sud","Keur Massar","Dakar","doc"],["Malika","Keur Massar","Dakar","doc"],["Yeumbeul Nord","Keur Massar","Dakar","doc"],["Yeumbeul Sud","Keur Massar","Dakar","doc"],
+  ["Baba Garage","Bambey","Diourbel","doc"],["Bambey","Bambey","Diourbel","doc"],["Dinguiraye","Bambey","Diourbel","doc"],["Gawane","Bambey","Diourbel","doc"],["Keur Samba Kane","Bambey","Diourbel","doc"],["Lambaye","Bambey","Diourbel","doc"],["Ndangalma","Bambey","Diourbel","doc"],["Ndondol","Bambey","Diourbel","doc"],["Ngogom","Bambey","Diourbel","doc"],["Ngoye","Bambey","Diourbel","doc"],["Réfane","Bambey","Diourbel","doc"],["Thiakhar","Bambey","Diourbel","doc"],
+  ["Diourbel","Diourbel","Diourbel","doc"],["Gade Escale","Diourbel","Diourbel","doc"],["Keur Ngalgou","Diourbel","Diourbel","doc"],["Dankh Sène","Diourbel","Diourbel","doc"],["Ndindy","Diourbel","Diourbel","doc"],["Ndoulo","Diourbel","Diourbel","doc"],["Ngohé","Diourbel","Diourbel","doc"],["Patar","Diourbel","Diourbel","doc"],["Taïba Moutoupha","Diourbel","Diourbel","doc"],["Tocky-Gare","Diourbel","Diourbel","doc"],["Touba Lappé","Diourbel","Diourbel","doc"],["Touré Mbonde","Diourbel","Diourbel","doc"],
+  ["Dalla Ngabou","Mbacké","Diourbel","doc"],["Darou Nahim","Mbacké","Diourbel","doc"],["Darou Salam Typ","Mbacké","Diourbel","doc"],["Dendey Gouyegui","Mbacké","Diourbel","doc"],["Kael","Mbacké","Diourbel","doc"],["Madina","Mbacké","Diourbel","doc"],["Mbacké","Mbacké","Diourbel","doc"],["Missirah","Mbacké","Diourbel","doc"],["Ndioumane","Mbacké","Diourbel","doc"],["Nghaye","Mbacké","Diourbel","doc"],["Sadio","Mbacké","Diourbel","doc"],["Taïba Thiékène","Mbacké","Diourbel","doc"],["Taïf","Mbacké","Diourbel","doc"],["Touba Fall","Mbacké","Diourbel","doc"],["Touba Mboul","Mbacké","Diourbel","doc"],["Touba Mosquée","Mbacké","Diourbel","doc"],
+  ["Diakhao","Fatick","Fatick","doc"],["Diaoulé","Fatick","Fatick","doc"],["Diarrère","Fatick","Fatick","doc"],["Diofior","Fatick","Fatick","doc"],["Diouroup","Fatick","Fatick","doc"],["Djilasse","Fatick","Fatick","doc"],["Fatick","Fatick","Fatick","doc"],["Fimela","Fatick","Fatick","doc"],["Loul Séssène","Fatick","Fatick","doc"],["Mbéllacadiao","Fatick","Fatick","doc"],["Ndiob","Fatick","Fatick","doc"],["Ngayokhème","Fatick","Fatick","doc"],["Niakhar","Fatick","Fatick","doc"],["Palmarin","Fatick","Fatick","doc"],["Patar","Fatick","Fatick","doc"],["Tattaguine","Fatick","Fatick","doc"],["Thiaré Ndialgui","Fatick","Fatick","doc"],
+  ["Bassoul","Foundiougne","Fatick","doc"],["Diagane Barka","Foundiougne","Fatick","doc"],["Dionewar","Foundiougne","Fatick","doc"],["Diossong","Foundiougne","Fatick","doc"],["Djilor","Foundiougne","Fatick","doc"],["Djirnda","Foundiougne","Fatick","doc"],["Foundiougne","Foundiougne","Fatick","doc"],["Karang Poste","Foundiougne","Fatick","doc"],["Keur Saloum Diané","Foundiougne","Fatick","doc"],["Keur Samba Guèye","Foundiougne","Fatick","doc"],["Mbam","Foundiougne","Fatick","doc"],["Niassène","Foundiougne","Fatick","doc"],["Nioro Alassane Tall","Foundiougne","Fatick","doc"],["Passy","Foundiougne","Fatick","doc"],["Sokone","Foundiougne","Fatick","doc"],["Soum","Foundiougne","Fatick","doc"],["Toubacouta","Foundiougne","Fatick","doc"],
+  ["Colobane","Gossas","Fatick","doc"],["Gossas","Gossas","Fatick","doc"],["Mbar","Gossas","Fatick","doc"],["Ndiène Lagane","Gossas","Fatick","doc"],["Ouadiour","Gossas","Fatick","doc"],["Patar Lia","Gossas","Fatick","doc"],
+  ["Birkilane","Birkelane","Kaffrine","doc"],["Diamal","Birkelane","Kaffrine","doc"],["Keur Mboucki","Birkelane","Kaffrine","doc"],["Mabo","Birkelane","Kaffrine","doc"],["Mbeuleup","Birkelane","Kaffrine","doc"],["Ndiognick","Birkelane","Kaffrine","doc"],["Ségré Gatta","Birkelane","Kaffrine","doc"],["Touba Mbella","Birkelane","Kaffrine","doc"],
+  ["Boulel","Kaffrine","Kaffrine","doc"],["Diamagadio","Kaffrine","Kaffrine","doc"],["Diokoul Mbelbouck","Kaffrine","Kaffrine","doc"],["Gniby","Kaffrine","Kaffrine","doc"],["Kaffrine","Kaffrine","Kaffrine","doc"],["Kahi","Kaffrine","Kaffrine","doc"],["Kathiotte","Kaffrine","Kaffrine","doc"],["Médinatoul Salam II","Kaffrine","Kaffrine","doc"],["Nganda","Kaffrine","Kaffrine","doc"],
+  ["Fass Thiékène","Koungheul","Kaffrine","doc"],["Ida Mouride","Koungheul","Kaffrine","doc"],["Koungheul","Koungheul","Kaffrine","doc"],["Lour Escale","Koungheul","Kaffrine","doc"],["Maka Yop","Koungheul","Kaffrine","doc"],["Missirah Wadène","Koungheul","Kaffrine","doc"],["Gainte Pathé","Koungheul","Kaffrine","doc"],["Ribot Escale","Koungheul","Kaffrine","doc"],["Saly Escale","Koungheul","Kaffrine","doc"],
+  ["Darou Minam 2","Malem Hodar","Kaffrine","doc"],["Dianké Souf","Malem Hodar","Kaffrine","doc"],["Khelcom","Malem Hodar","Kaffrine","doc"],["Malem-Hodar","Malem Hodar","Kaffrine","doc"],["Ndiobène Samba Lamo","Malem Hodar","Kaffrine","doc"],["Ndioum Ngainthe","Malem Hodar","Kaffrine","doc"],["Sagna","Malem Hodar","Kaffrine","doc"],
+  ["Dara Mboss","Guinguinéo","Kaolack","doc"],["Fass","Guinguinéo","Kaolack","doc"],["Gagnick","Guinguinéo","Kaolack","doc"],["Guinguinéo","Guinguinéo","Kaolack","doc"],["Khelcom Birane","Guinguinéo","Kaolack","doc"],["Mbadakhoune","Guinguinéo","Kaolack","doc"],["Mboss","Guinguinéo","Kaolack","doc"],["Ndiago","Guinguinéo","Kaolack","doc"],["Ngathe Naoudé","Guinguinéo","Kaolack","doc"],["Nguélou","Guinguinéo","Kaolack","doc"],["Ourour","Guinguinéo","Kaolack","doc"],["Panal Wolof","Guinguinéo","Kaolack","doc"],
+  ["Dya","Kaolack","Kaolack","doc"],["Gandiaye","Kaolack","Kaolack","doc"],["Kahone","Kaolack","Kaolack","doc"],["Kaolack","Kaolack","Kaolack","doc"],["Keur Baka","Kaolack","Kaolack","doc"],["Latmingué","Kaolack","Kaolack","doc"],["Ndiaffate","Kaolack","Kaolack","doc"],["Ndiébel","Kaolack","Kaolack","doc"],["Ndiédieng","Kaolack","Kaolack","doc"],["Ndofane","Kaolack","Kaolack","doc"],["Sibassor","Kaolack","Kaolack","doc"],["Thiaré","Kaolack","Kaolack","doc"],["Thiomby","Kaolack","Kaolack","doc"],
+  ["Dabaly","Nioro du Rip","Kaolack","doc"],["Darou Salam","Nioro du Rip","Kaolack","doc"],["Gainthe Kaye","Nioro du Rip","Kaolack","doc"],["Kayemor","Nioro du Rip","Kaolack","doc"],["Keur Maba Diakhou","Nioro du Rip","Kaolack","doc"],["Keur Madiabel","Nioro du Rip","Kaolack","doc"],["Keur Madongo","Nioro du Rip","Kaolack","doc"],["Keur Socé","Nioro du Rip","Kaolack","doc"],["Médina Sabakh","Nioro du Rip","Kaolack","doc"],["Ndramé Escale","Nioro du Rip","Kaolack","doc"],["Ngayène","Nioro du Rip","Kaolack","doc"],["Nioro du Rip","Nioro du Rip","Kaolack","doc"],["Paoskoto","Nioro du Rip","Kaolack","doc"],["Porokhane","Nioro du Rip","Kaolack","doc"],["Taïba Niassène","Nioro du Rip","Kaolack","doc"],["Wack Ngouna","Nioro du Rip","Kaolack","doc"],
+  ["Bandafassi","Kédougou","Kédougou","doc"],["Dimboli","Kédougou","Kédougou","doc"],["Dindefelo","Kédougou","Kédougou","doc"],["Fongolimbi","Kédougou","Kédougou","doc"],["Kédougou","Kédougou","Kédougou","doc"],["Ninéfécha","Kédougou","Kédougou","doc"],["Tomboroncoto","Kédougou","Kédougou","doc"],
+  ["Dar Salam","Salémata","Kédougou","doc"],["Ethiolo","Salémata","Kédougou","doc"],["Oubadji","Salémata","Kédougou","doc"],["Salémata","Salémata","Kédougou","doc"],
+  ["Bembou","Saraya","Kédougou","doc"],["Dakateli","Saraya","Kédougou","doc"],["Kévoye","Saraya","Kédougou","doc"],["Khossanto","Saraya","Kédougou","doc"],["Médina Baffé","Saraya","Kédougou","doc"],["Missirah Sirimana","Saraya","Kédougou","doc"],["Sabodala","Saraya","Kédougou","doc"],["Saraya","Saraya","Kédougou","doc"],
+  ["Bagadadji","Kolda","Kolda","doc"],["Coumbacara","Kolda","Kolda","doc"],["Dabo","Kolda","Kolda","doc"],["Dialambéré","Kolda","Kolda","doc"],["Dioulacolon","Kolda","Kolda","doc"],["Guiro Yéro Bocar","Kolda","Kolda","doc"],["Kolda","Kolda","Kolda","doc"],["Mampatim","Kolda","Kolda","doc"],["Médina Chérif","Kolda","Kolda","doc"],["Médina El Hadj","Kolda","Kolda","doc"],["Salikégné","Kolda","Kolda","doc"],["Saré Bidji","Kolda","Kolda","doc"],["Saré Yoba Diéga","Kolda","Kolda","doc"],["Tankanto Escale","Kolda","Kolda","doc"],["Thiétty","Kolda","Kolda","doc"],
+  ["Bignarabé","Médina Yoro Foulah","Kolda","doc"],["Bourouco","Médina Yoro Foulah","Kolda","doc"],["Dinguiraye","Médina Yoro Foulah","Kolda","doc"],["Kéréwane","Médina Yoro Foulah","Kolda","doc"],["Koulinto","Médina Yoro Foulah","Kolda","doc"],["Médina Yoro Foulah","Médina Yoro Foulah","Kolda","doc"],["Ndorna","Médina Yoro Foulah","Kolda","doc"],["Niaming","Médina Yoro Foulah","Kolda","doc"],["Pata","Médina Yoro Foulah","Kolda","doc"],
+  ["Badion","Vélingara","Kolda","doc"],["Bonconto","Vélingara","Kolda","doc"],["Diaobé-Kabendou","Vélingara","Kolda","doc"],["Fafacourou","Vélingara","Kolda","doc"],["Kandia","Vélingara","Kolda","doc"],["Kandiaye","Vélingara","Kolda","doc"],["Kounkané","Vélingara","Kolda","doc"],["Linkéring","Vélingara","Kolda","doc"],["Médina Gounass","Vélingara","Kolda","doc"],["Némataba","Vélingara","Kolda","doc"],["Ouassadou","Vélingara","Kolda","doc"],["Pakour","Vélingara","Kolda","doc"],["Paroumba","Vélingara","Kolda","doc"],["Saré Coly Sallé","Vélingara","Kolda","doc"],["Sinthiang Koundara","Vélingara","Kolda","doc"],["Vélingara","Vélingara","Kolda","doc"],
+  ["Bandegne Ouolof","Kébémer","Louga","doc"],["Darou Marnane","Kébémer","Louga","doc"],["Darou Mousty","Kébémer","Louga","doc"],["Diokoul Diawrigne","Kébémer","Louga","doc"],["Guéoul","Kébémer","Louga","doc"],["Kab Gaye","Kébémer","Louga","doc"],["Kanène Ndiob","Kébémer","Louga","doc"],["Kébémer","Kébémer","Louga","doc"],["Loro","Kébémer","Louga","doc"],["Mbacké Cajor","Kébémer","Louga","doc"],["Mbadiane","Kébémer","Louga","doc"],["Ndande","Kébémer","Louga","doc"],["Ndoyene","Kébémer","Louga","doc"],["Ngourane Ouolof","Kébémer","Louga","doc"],["Sagatta Gueth","Kébémer","Louga","doc"],["Sam Yabal","Kébémer","Louga","doc"],["Thieppe","Kébémer","Louga","doc"],["Thiolom Fall","Kébémer","Louga","doc"],["Touba Mérina","Kébémer","Louga","doc"],
+  ["Affé Djoloff","Linguère","Louga","doc"],["Barkédji","Linguère","Louga","doc"],["Boulal","Linguère","Louga","doc"],["Dahra","Linguère","Louga","doc"],["Dealy","Linguère","Louga","doc"],["Dodji","Linguère","Louga","doc"],["Gassane","Linguère","Louga","doc"],["Kamb","Linguère","Louga","doc"],["Labgar","Linguère","Louga","doc"],["Linguère","Linguère","Louga","doc"],["Mbeuleukhé","Linguère","Louga","doc"],["Mboula","Linguère","Louga","doc"],["Ouarkhokh","Linguère","Louga","doc"],["Sagatta Djolof","Linguère","Louga","doc"],["Téssékéré Forage","Linguère","Louga","doc"],["Thiamène Djolof","Linguère","Louga","doc"],["Thiarny","Linguère","Louga","doc"],["Thiel","Linguère","Louga","doc"],["Yang-Yang","Linguère","Louga","doc"],
+  ["Coki","Louga","Louga","doc"],["Gande","Louga","Louga","doc"],["Guet Ardo","Louga","Louga","doc"],["Kéle Gueye","Louga","Louga","doc"],["Keur Momar Sarr","Louga","Louga","doc"],["Léona","Louga","Louga","doc"],["Louga","Louga","Louga","doc"],["Mbédiène","Louga","Louga","doc"],["Ndiagne","Louga","Louga","doc"],["Nguer Malal","Louga","Louga","doc"],["Ngueune Sarr","Louga","Louga","doc"],["Nguidilé","Louga","Louga","doc"],["Niomré","Louga","Louga","doc"],["Pété Ouarack","Louga","Louga","doc"],["Sakal","Louga","Louga","doc"],["Syer","Louga","Louga","doc"],["Thiamène Cayor","Louga","Louga","doc"],
+  ["Aouré","Kanel","Matam","doc"],["Bokiladji","Kanel","Matam","doc"],["Dembancané","Kanel","Matam","doc"],["Hamady Ounaré","Kanel","Matam","doc"],["Kanel","Kanel","Matam","doc"],["Ndendory","Kanel","Matam","doc"],["Odobéré","Kanel","Matam","doc"],["Orkadiere","Kanel","Matam","doc"],["Semmé","Kanel","Matam","doc"],["Sinthiou Bamambé-Banadji","Kanel","Matam","doc"],["Waoundé","Kanel","Matam","doc"],["Wouro Sidy","Kanel","Matam","doc"],
+  ["Agnams","Matam","Matam","doc"],["Bokidiawé","Matam","Matam","doc"],["Dabia","Matam","Matam","doc"],["Matam","Matam","Matam","doc"],["Nabadji Civol","Matam","Matam","doc"],["Nguidjilone","Matam","Matam","doc"],["Ogo","Matam","Matam","doc"],["Oréfondé","Matam","Matam","doc"],["Ourossogui","Matam","Matam","doc"],["Thilogne","Matam","Matam","doc"],
+  ["Lougré Thioly","Ranérou Ferlo","Matam","doc"],["Oudalaye","Ranérou Ferlo","Matam","doc"],["Ranérou","Ranérou Ferlo","Matam","doc"],["Vélingara Ferlo","Ranérou Ferlo","Matam","doc"],
+  ["Bokhol","Dagana","Saint-Louis","doc"],["Dagana","Dagana","Saint-Louis","doc"],["Diama","Dagana","Saint-Louis","doc"],["Gaé","Dagana","Saint-Louis","doc"],["Mbane","Dagana","Saint-Louis","doc"],["Ndombo Sandjiry","Dagana","Saint-Louis","doc"],["Ngnith","Dagana","Saint-Louis","doc"],["Richard-Toll","Dagana","Saint-Louis","doc"],["Ronkh","Dagana","Saint-Louis","doc"],["Ross Béthio","Dagana","Saint-Louis","doc"],["Rosso","Dagana","Saint-Louis","doc"],
+  ["Aéré Lao","Podor","Saint-Louis","doc"],["Bodé Lao","Podor","Saint-Louis","doc"],["Boké Dialloubé","Podor","Saint-Louis","doc"],["Démette","Podor","Saint-Louis","doc"],["Dodel","Podor","Saint-Louis","doc"],["Doumga Lao","Podor","Saint-Louis","doc"],["Fanaye","Podor","Saint-Louis","doc"],["Galoya Toucouleur","Podor","Saint-Louis","doc"],["Gamadji Saré","Podor","Saint-Louis","doc"],["Golléré","Podor","Saint-Louis","doc"],["Guédé Chantier","Podor","Saint-Louis","doc"],["Guédé Village","Podor","Saint-Louis","doc"],["Madina Diathbé","Podor","Saint-Louis","doc"],["Mbolo Birane","Podor","Saint-Louis","doc"],["Mboumba","Podor","Saint-Louis","doc"],["Méry","Podor","Saint-Louis","doc"],["Ndiandane","Podor","Saint-Louis","doc"],["Ndiayène Peindao","Podor","Saint-Louis","doc"],["Ndioum","Podor","Saint-Louis","doc"],["Pété","Podor","Saint-Louis","doc"],["Podor","Podor","Saint-Louis","doc"],["Walaldé","Podor","Saint-Louis","doc"],
+  ["Fass Ngom","Saint-Louis","Saint-Louis","doc"],["Gandon","Saint-Louis","Saint-Louis","doc"],["Mpal","Saint-Louis","Saint-Louis","doc"],["Ndiébène Gandiole","Saint-Louis","Saint-Louis","doc"],["Saint-Louis","Saint-Louis","Saint-Louis","doc"],
+  ["Bona","Bounkiling","Sédhiou","doc"],["Bounkiling","Bounkiling","Sédhiou","doc"],["Diacounda","Bounkiling","Sédhiou","doc"],["Diambati","Bounkiling","Sédhiou","doc"],["Diaroumé","Bounkiling","Sédhiou","doc"],["Djinany","Bounkiling","Sédhiou","doc"],["Faoune","Bounkiling","Sédhiou","doc"],["Inor","Bounkiling","Sédhiou","doc"],["Kandion Mangana","Bounkiling","Sédhiou","doc"],["Madina Wandifa","Bounkiling","Sédhiou","doc"],["Ndiamacouta","Bounkiling","Sédhiou","doc"],["Ndiamalathiel","Bounkiling","Sédhiou","doc"],["Tankon","Bounkiling","Sédhiou","doc"],
+  ["Baghère","Goudomp","Sédhiou","doc"],["Diattacounda","Goudomp","Sédhiou","doc"],["Diouboudou","Goudomp","Sédhiou","doc"],["Djibanar","Goudomp","Sédhiou","doc"],["Goudomp","Goudomp","Sédhiou","doc"],["Kaour","Goudomp","Sédhiou","doc"],["Karantaba","Goudomp","Sédhiou","doc"],["Kolibantang","Goudomp","Sédhiou","doc"],["Mangaroungou Santo","Goudomp","Sédhiou","doc"],["Niagha","Goudomp","Sédhiou","doc"],["Samine","Goudomp","Sédhiou","doc"],["Simbandi Balante","Goudomp","Sédhiou","doc"],["Simbandi Brassou","Goudomp","Sédhiou","doc"],["Tanaff","Goudomp","Sédhiou","doc"],["Yarang Balante","Goudomp","Sédhiou","doc"],
+  ["Bambaly","Sédhiou","Sédhiou","doc"],["Bémet Bidjini","Sédhiou","Sédhiou","doc"],["Boghall","Sédhiou","Sédhiou","doc"],["Diannah Ba","Sédhiou","Sédhiou","doc"],["Diannah Malary","Sédhiou","Sédhiou","doc"],["Diendé","Sédhiou","Sédhiou","doc"],["Djibabouya","Sédhiou","Sédhiou","doc"],["Djiredji","Sédhiou","Sédhiou","doc"],["Koussy","Sédhiou","Sédhiou","doc"],["Marsassoum","Sédhiou","Sédhiou","doc"],["Oudoucar","Sédhiou","Sédhiou","doc"],["Sakar","Sédhiou","Sédhiou","doc"],["Sama Kanta Peulh","Sédhiou","Sédhiou","doc"],["Sansamba","Sédhiou","Sédhiou","doc"],["Sédhiou","Sédhiou","Sédhiou","doc"],
+  ["Bakel","Bakel","Tambacounda","doc"],["Ballou","Bakel","Tambacounda","doc"],["Bélé","Bakel","Tambacounda","doc"],["Diawara","Bakel","Tambacounda","doc"],["Gabou","Bakel","Tambacounda","doc"],["Gathiary","Bakel","Tambacounda","doc"],["Kidira","Bakel","Tambacounda","doc"],["Madina Foulbé","Bakel","Tambacounda","doc"],["Moudéry","Bakel","Tambacounda","doc"],["Sadatou","Bakel","Tambacounda","doc"],["Sinthiou Fissa","Bakel","Tambacounda","doc"],["Toumboura","Bakel","Tambacounda","doc"],
+  ["Bala","Goudiry","Tambacounda","doc"],["Bani Israël","Goudiry","Tambacounda","doc"],["Boutoucoufara","Goudiry","Tambacounda","doc"],["Boynguel Bamba","Goudiry","Tambacounda","doc"],["Dianké Makha","Goudiry","Tambacounda","doc"],["Dougué","Goudiry","Tambacounda","doc"],["Goumbayél","Goudiry","Tambacounda","doc"],["Goudiry","Goudiry","Tambacounda","doc"],["Koar","Goudiry","Tambacounda","doc"],["Komoti","Goudiry","Tambacounda","doc"],["Kothiary","Goudiry","Tambacounda","doc"],["Koulor","Goudiry","Tambacounda","doc"],["Koussan","Goudiry","Tambacounda","doc"],["Sinthiou Bocar Ali","Goudiry","Tambacounda","doc"],["Sinthiou Mamadou Boubou","Goudiry","Tambacounda","doc"],
+  ["Bamba Thialène","Koumpentoum","Tambacounda","doc"],["Kahène","Koumpentoum","Tambacounda","doc"],["Koumpentoum","Koumpentoum","Tambacounda","doc"],["Kouthia Gaydi","Koumpentoum","Tambacounda","doc"],["Kouthiaba Wolof","Koumpentoum","Tambacounda","doc"],["Malem Niani","Koumpentoum","Tambacounda","doc"],["Méréto","Koumpentoum","Tambacounda","doc"],["Ndame","Koumpentoum","Tambacounda","doc"],["Niani Toucouleur","Koumpentoum","Tambacounda","doc"],["Pass Koto","Koumpentoum","Tambacounda","doc"],["Payar","Koumpentoum","Tambacounda","doc"],["Sinthiou Malème","Koumpentoum","Tambacounda","doc"],
+  ["Dialacoto","Tambacounda","Tambacounda","doc"],["Koussanar","Tambacounda","Tambacounda","doc"],["Makacolibantang","Tambacounda","Tambacounda","doc"],["Missirah","Tambacounda","Tambacounda","doc"],["Ndoga Babacar","Tambacounda","Tambacounda","doc"],["Néttéboulou","Tambacounda","Tambacounda","doc"],["Tambacounda","Tambacounda","Tambacounda","doc"],
+  ["Diass","Mbour","Thiès","doc"],["Fissel","Mbour","Thiès","doc"],["Joal-Fadiouth","Mbour","Thiès","doc"],["Mbour","Mbour","Thiès","doc"],["Malicounda","Mbour","Thiès","doc"],["Ndiaganiao","Mbour","Thiès","doc"],["Ngaparou","Mbour","Thiès","doc"],["Nguékhokh","Mbour","Thiès","doc"],["Nguéniène","Mbour","Thiès","doc"],["Popenguine-Ndayane","Mbour","Thiès","doc"],["Saly","Mbour","Thiès","doc"],["Sandiara","Mbour","Thiès","doc"],["Séssène","Mbour","Thiès","doc"],["Sindia","Mbour","Thiès","doc"],["Somone","Mbour","Thiès","doc"],["Thiadiaye","Mbour","Thiès","doc"],
+  ["Diender","Thiès","Thiès","doc"],["Fandène","Thiès","Thiès","doc"],["Kayar","Thiès","Thiès","doc"],["Keur Moussa","Thiès","Thiès","doc"],["Khombole","Thiès","Thiès","doc"],["Ndiéyène Sirah","Thiès","Thiès","doc"],["Ngoudiane","Thiès","Thiès","doc"],["Notto","Thiès","Thiès","doc"],["Pout","Thiès","Thiès","doc"],["Tassette","Thiès","Thiès","doc"],["Thiénaba","Thiès","Thiès","doc"],["Thiès Est","Thiès","Thiès","doc"],["Thiès Nord","Thiès","Thiès","doc"],["Thiès Ouest","Thiès","Thiès","doc"],["Touba Toul","Thiès","Thiès","doc"],["Yaboyabo","Thiès","Thiès","doc"],
+  ["Chérif Lo","Tivaouane","Thiès","doc"],["Darou Khoudoss","Tivaouane","Thiès","doc"],["Koul","Tivaouane","Thiès","doc"],["Mbayène","Tivaouane","Thiès","doc"],["Mboro","Tivaouane","Thiès","doc"],["Meckhe","Tivaouane","Thiès","doc"],["Méouane","Tivaouane","Thiès","doc"],["Mérina Dakhar","Tivaouane","Thiès","doc"],["Mont Rolland","Tivaouane","Thiès","doc"],["Ngandiouf","Tivaouane","Thiès","doc"],["Niakhene","Tivaouane","Thiès","doc"],["Notto Gouye Diama","Tivaouane","Thiès","doc"],["Pambal","Tivaouane","Thiès","doc"],["Pékèsse","Tivaouane","Thiès","doc"],["Pire Goureye","Tivaouane","Thiès","doc"],["Taïba Ndiaye","Tivaouane","Thiès","doc"],["Thilmakha","Tivaouane","Thiès","doc"],["Tivaouane","Tivaouane","Thiès","doc"],
+  ["Balinghore","Bignona","Ziguinchor","doc"],["Bignona","Bignona","Ziguinchor","doc"],["Boutoupa-Camaracounda","Bignona","Ziguinchor","doc"],["Diégoune","Bignona","Ziguinchor","doc"],["Diouloulou","Bignona","Ziguinchor","doc"],["Djibidione","Bignona","Ziguinchor","doc"],["Djinaky","Bignona","Ziguinchor","doc"],["Kafountine","Bignona","Ziguinchor","doc"],["Kartiack","Bignona","Ziguinchor","doc"],["Kataba 1","Bignona","Ziguinchor","doc"],["Mangagoulack","Bignona","Ziguinchor","doc"],["Niamone","Bignona","Ziguinchor","doc"],["Oulampane","Bignona","Ziguinchor","doc"],["Ouonck","Bignona","Ziguinchor","doc"],["Sindian","Bignona","Ziguinchor","doc"],["Suelle","Bignona","Ziguinchor","doc"],["Tenghory","Bignona","Ziguinchor","doc"],["Thionck Essyl","Bignona","Ziguinchor","doc"],
+  ["Diembéring","Oussouye","Ziguinchor","doc"],["Enampore","Oussouye","Ziguinchor","doc"],["Mlomp","Oussouye","Ziguinchor","doc"],["Oukout","Oussouye","Ziguinchor","doc"],["Oussouye","Oussouye","Ziguinchor","doc"],["Santhiaba Manjacque","Oussouye","Ziguinchor","doc"],
+  ["Adéane","Ziguinchor","Ziguinchor","doc"],["Coubalan","Ziguinchor","Ziguinchor","doc"],["Niaguis","Ziguinchor","Ziguinchor","doc"],["Nyassia","Ziguinchor","Ziguinchor","doc"],["Ziguinchor","Ziguinchor","Ziguinchor","doc"]
+];
+
+/* Fiches détaillées par commune, clé "Nom|Département" (certains noms de
+   commune se répètent dans des départements différents — ex. deux
+   communes nommées "Vélingara" existent, l'une chef-lieu du département
+   de Vélingara, l'autre dans Ranérou Ferlo — d'où la clé composite).
+
+   Ces maires (élections locales du 23 janvier 2022, avec remplacements
+   connus depuis) proviennent de recherches documentaires et PEUVENT ÊTRE
+   DÉSUÈTES ou inexactes : à vérifier par le réseau de référents avant
+   toute publication officielle. Limité aux grandes communes/villes pour
+   lesquelles une source a été trouvée — la grande majorité des 553
+   communes n'a pas de maire renseigné (aucune base de données publique
+   centralisée des résultats commune par commune n'a été identifiée). */
 const COMMUNE_DETAILS = {
-  "Dakar": { maire: "Abass Fall", note: "Élu par le conseil municipal en août 2025, après la destitution de Barthélémy Dias (déc. 2024)." },
-  "Pikine": { maire: "Abdoulaye Timbo", note: "Élu en janvier 2022." },
-  "Guédiawaye": { maire: "Ahmed Aïdara", note: "Élu en janvier 2022." },
-  "Rufisque": { maire: "Oumar Cissé", note: "Élu en janvier 2022." },
-  "Bargny": { maire: "Djibril Fall", note: "Élu en janvier 2022." },
-  "Thiès": { maire: "Babacar Diop", note: "Élu en janvier 2022." },
-  "Mbour": { maire: "Cheikh Issa Sall", note: "Élu en janvier 2022." },
-  "Tivaouane": { maire: "Demba Diop (dit Diop Sy)", note: "Élu en janvier 2022." },
-  "Joal-Fadiouth": { maire: "Sophie Gladima", note: "Élue en janvier 2022." },
-  "Diourbel": { maire: "Malick Fall", note: "Élu en janvier 2022." },
-  "Mbacké": { maire: "Gallo Bâ", note: "Élu en janvier 2022." },
-  "Touba": { maire: "Abdoul Ahad Ka", note: "Élu en janvier 2022 (commune récente de Touba)." },
-  "Louga": { maire: "Moustapha Diop", note: "Élu en janvier 2022." },
-  "Saint-Louis": { maire: "Mansour Faye", note: "Réélu en janvier 2022, en poste." },
-  "Richard-Toll": { maire: "Amadou Mame Diop", note: "Élu en janvier 2022." },
-  "Tambacounda": { maire: "Papa Banda Dièye", note: "Élu en janvier 2022." },
-  "Kédougou": { maire: "Ousmane Sylla", note: "Élu en janvier 2022." },
-  "Kolda": { maire: "Mame Boye Diao", note: "Élu en janvier 2022." },
-  "Vélingara": { maire: "Mamadou Oury Baïlo Diallo", note: "Réélu (4ᵉ mandat consécutif) en janvier 2022." },
-  "Sédhiou": { maire: "Abdoulaye Diop", note: "Élu en janvier 2022." },
-  "Ziguinchor": { maire: "Djibril Sonko", note: "Élu en juin 2024, après la démission d'Ousmane Sonko (devenu Premier ministre)." },
-  "Kaffrine": { maire: "Abdoulaye Saydou Sow", note: "Élu en janvier 2022." },
-  "Kaolack": { maire: "Sérigne Mboup", note: "Élu en janvier 2022." },
-  "Gossas": { maire: "Adama Diallo", note: "Élu en janvier 2022." },
-  "Fatick": { maire: "Matar Bâ", note: "Élu en janvier 2022 — mandat à reconfirmer." },
-  "Foundiougne": { maire: "Thiémokho Ndiaye", note: "Source à recouper." },
-  "Nioro du Rip": { maire: "Modou Mbaye", note: "Source à recouper." },
-  "Guinguinéo": { maire: "Rokhaya Diouf", note: "Source à recouper." }
+  "Bargny|Rufisque": { maire: "Djibril Fall", note: "Élu en janvier 2022." },
+  "Tivaouane|Tivaouane": { maire: "Demba Diop (dit Diop Sy)", note: "Élu en janvier 2022." },
+  "Joal-Fadiouth|Mbour": { maire: "Sophie Gladima", note: "Élue en janvier 2022." },
+  "Diourbel|Diourbel": { maire: "Malick Fall", note: "Élu en janvier 2022." },
+  "Mbacké|Mbacké": { maire: "Gallo Bâ", note: "Élu en janvier 2022." },
+  "Louga|Louga": { maire: "Moustapha Diop", note: "Élu en janvier 2022." },
+  "Saint-Louis|Saint-Louis": { maire: "Mansour Faye", note: "Réélu en janvier 2022, en poste." },
+  "Richard-Toll|Dagana": { maire: "Amadou Mame Diop", note: "Élu en janvier 2022." },
+  "Tambacounda|Tambacounda": { maire: "Papa Banda Dièye", note: "Élu en janvier 2022." },
+  "Kédougou|Kédougou": { maire: "Ousmane Sylla", note: "Élu en janvier 2022." },
+  "Kolda|Kolda": { maire: "Mame Boye Diao", note: "Élu en janvier 2022." },
+  "Vélingara|Vélingara": { maire: "Mamadou Oury Baïlo Diallo", note: "Réélu (4ᵉ mandat consécutif) en janvier 2022." },
+  "Sédhiou|Sédhiou": { maire: "Abdoulaye Diop", note: "Élu en janvier 2022." },
+  "Ziguinchor|Ziguinchor": { maire: "Djibril Sonko", note: "Élu en juin 2024, après la démission d'Ousmane Sonko (devenu Premier ministre)." },
+  "Kaffrine|Kaffrine": { maire: "Abdoulaye Saydou Sow", note: "Élu en janvier 2022." },
+  "Kaolack|Kaolack": { maire: "Sérigne Mboup", note: "Élu en janvier 2022." },
+  "Gossas|Gossas": { maire: "Adama Diallo", note: "Élu en janvier 2022." },
+  "Fatick|Fatick": { maire: "Matar Bâ", note: "Élu en janvier 2022 — mandat à reconfirmer." },
+  "Foundiougne|Foundiougne": { maire: "Thiémokho Ndiaye", note: "Source à recouper." },
+  "Nioro du Rip|Nioro du Rip": { maire: "Modou Mbaye", note: "Source à recouper." },
+  "Guinguinéo|Guinguinéo": { maire: "Rokhaya Diouf", note: "Source à recouper." }
 };

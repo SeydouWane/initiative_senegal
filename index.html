@@ -14,7 +14,15 @@
 <body>
 
 <section class="cover">
+  <div class="tribar cover-tribar top"><span></span><span></span><span></span></div>
   <img class="cover-img" src="images/image.png" alt="Un baobab majestueux dans la campagne sénégalaise">
+  <div class="cover-scrim"></div>
+  <div class="cover-text">
+    <span class="flagmark"><span></span><span></span><span></span></span>
+    <h1>Communes Transparentes</h1>
+    <p>S'informer · Comprendre · Participer</p>
+  </div>
+  <div class="tribar cover-tribar bottom"><span></span><span></span><span></span></div>
   <a class="cover-arrow" href="#accueil" aria-label="Découvrir le site">
     <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
   </a>
@@ -76,7 +84,6 @@
           <img src="images/pirogues-2.jpg" alt="Pêcheurs sénégalais posant devant leurs pirogues motorisées sur une plage" loading="lazy">
         </figure>
       </div>
-      <p class="photo-caption">Le Sénégal vécu sur le terrain — mobilisation citoyenne et communes côtières, une même volonté de comprendre et de participer.</p>
     </div>
   </section>
 
@@ -96,7 +103,7 @@
         <div class="bigquote">§</div>
         <div class="ref">Loi n° 2013-10 du 28 décembre 2013</div>
         <blockquote>« Tout habitant ou contribuable de la commune a le droit de demander communication et de prendre copie des procès-verbaux du conseil municipal, des budgets et des comptes, ainsi que des arrêtés de l'autorité locale. »</blockquote>
-        <p class="src">Code général des Collectivités locales — République du Sénégal</p>
+        <p class="src">Code général des Collectivités territoriales — République du Sénégal</p>
       </figure>
     </div>
   </section>
@@ -110,19 +117,23 @@
             Cartographie citoyenne
           </div>
           <h2 style="font-size:32px;">La transparence, commune par commune</h2>
-          <p>Une carte vivante, alimentée par notre réseau de référents locaux, pour suivre comment les demandes d'accès à l'information sont traitées à travers le pays. Filtrez par région ou par statut, ou cherchez une commune par son nom.</p>
+          <p>Une carte vivante, alimentée par notre réseau de référents locaux, pour suivre comment les demandes d'accès à l'information sont traitées à travers le pays. Cliquez sur un département pour filtrer ses communes, ou cherchez directement une commune par son nom.</p>
         </div>
       </div>
 
       <div class="demo-banner">
         <span>ℹ️</span>
-        <div><b>Suivi en cours de constitution.</b> Les 45 communes et leur position sur la carte sont réelles. Le statut de la démarche de transparence est encore à « documenter » partout : le réseau de référents n'a pas encore engagé de demande officielle, et cette carte sera mise à jour au fil de la collecte réelle. Les noms de maires affichés dans les fiches proviennent de recherches documentaires et restent à vérifier avant publication officielle.</div>
+        <div><b>Suivi en cours de constitution.</b> Les 553 communes réparties dans les 46 départements et leur rattachement sont réels (source : recensement documentaire, à recouper avec une liste officielle avant publication — voir le README). Le statut de la démarche de transparence est encore à « documenter » partout : le réseau de référents n'a pas encore engagé de demande officielle. Les noms de maires affichés dans certaines fiches proviennent de recherches documentaires et restent à vérifier avant publication officielle.</div>
       </div>
 
       <div class="map-toolbar">
         <div class="field">
           <label for="searchInput">Rechercher</label>
           <input id="searchInput" type="text" placeholder="Nom d'une commune…">
+        </div>
+        <div class="field">
+          <label for="departementSelect">Département</label>
+          <select id="departementSelect"><option value="">Tous les départements</option></select>
         </div>
         <div class="field">
           <label for="regionSelect">Région</label>
@@ -149,11 +160,11 @@
 
       <div class="map-body">
         <figure class="map-figure">
-          <svg id="mapSvg" viewBox="0 0 600 490" role="img" aria-label="Carte du Sénégal, tracé et positions réels, avec 45 communes suivies par l'initiative">
+          <svg id="mapSvg" viewBox="0 0 600 490" role="img" aria-label="Carte du Sénégal, tracé et positions réels des 46 départements, regroupant les 553 communes suivies par l'initiative">
             <path id="senegal-outline"></path>
             <g id="pinsLayer"></g>
           </svg>
-          <figcaption>Contour et positions des communes projetés à partir de coordonnées géographiques réelles — cliquez sur un point pour ouvrir la fiche de la commune.</figcaption>
+          <figcaption>Chaque point représente un département (position réelle) — cliquez dessus pour filtrer la liste sur ses communes. Cliquez une commune dans la liste pour ouvrir sa fiche.</figcaption>
         </figure>
         <div class="commune-list" id="communeList"></div>
       </div>
@@ -194,7 +205,7 @@
         Ce que dit la loi
       </div>
       <h2 style="font-size:32px; max-width:640px;">Comment exercer concrètement votre droit d'accès</h2>
-      <p style="margin-top:16px; color:var(--text-muted); max-width:64ch;">Le Code général des Collectivités locales (loi n° 2013-10) vous reconnaît ce droit sans condition particulière à justifier. Voici, dans l'ordre, comment nos référents accompagnent une démarche type.</p>
+      <p style="margin-top:16px; color:var(--text-muted); max-width:64ch;">Le Code général des Collectivités territoriales (loi n° 2013-10, article 6) vous reconnaît ce droit sans condition particulière à justifier. Voici, dans l'ordre, comment nos référents accompagnent une démarche type.</p>
       <div class="steps">
         <div class="step">
           <div class="num"></div>
@@ -273,7 +284,7 @@ Objet : Demande de communication de documents administratifs communaux
 
 Monsieur/Madame le Maire,
 
-En ma qualité d'habitant(e) et/ou de contribuable de la commune de [nom de la commune], je sollicite, en application de l'article [à préciser selon l'édition consultée] du Code général des Collectivités locales (loi n° 2013-10 du 28 décembre 2013), la communication et la délivrance d'une copie des documents suivants :
+En ma qualité d'habitant(e) et/ou de contribuable de la commune de [nom de la commune], je sollicite, en application de l'article 6 du Code général des Collectivités territoriales (loi n° 2013-10 du 28 décembre 2013), la communication et la délivrance d'une copie des documents suivants :
 
 - [ex. : budget de la commune pour l'exercice ...]
 - [ex. : compte administratif de l'exercice ...]
@@ -348,6 +359,7 @@ Je vous prie d'agréer, Monsieur/Madame le Maire, l'expression de ma considérat
         </div>
         <div class="foot-mono">Initiative citoyenne pour la transparence des communes — Sénégal</div>
       </div>
+      <p class="foot-credit">Développé de manière citoyenne par Papa Seydou Wane — <a href="https://www.linkedin.com/in/papa-seydou-wane-data-analyst-scientist-developper-python/?skipRedirect=true" target="_blank" rel="noopener">profil LinkedIn</a></p>
     </div>
   </footer>
 </main>
