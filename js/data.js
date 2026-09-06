@@ -266,5 +266,24 @@ const COMMUNE_DETAILS = {
   "Thilogne|Matam": { maire: "Mamadou Elimane Kane", note: "Installé en février 2022 (coalition Bunt Bi)." },
   "Bokidiawé|Matam": { maire: "Kalidou Wagué", note: "Source à recouper." },
   "Semmé|Kanel": { maire: "Habibou Thiembo", note: "En poste en 2022 ; emprisonné en février 2024 pour fraude présumée — successeur à identifier." },
-  "Ranérou|Ranérou Ferlo": { maire: "Amadou Harouna Diallo (dit Gallo Diallo)", note: "Installé en février 2022, succède à Amadou Dawa Diallo (élu maire et président du Conseil départemental en janvier 2022, démissionnaire de la mairie pour incompatibilité de fonctions)." }
+  "Ranérou|Ranérou Ferlo": { maire: "Amadou Harouna Diallo (dit Gallo Diallo)", note: "Installé en février 2022, succède à Amadou Dawa Diallo (élu maire et président du Conseil départemental en janvier 2022, démissionnaire de la mairie pour incompatibilité de fonctions)." },
+
+  "Diawara|Bakel": { maire: "Killé Sakho", note: "Maire depuis 2014 ; mandat 2022 à reconfirmer." },
+  "Moudéry|Bakel": { maire: "Diakoye Tounkara", note: "Source à recouper." },
+  "Koussanar|Tambacounda": { maire: "Boubacar Bâ", note: "Réélu (2ᵉ mandat), installé le 11 février 2022." },
+  "Missirah|Tambacounda": { maire: "Amadou Bâ", note: "Élu en janvier 2022 (directeur du quotidien L'As)." },
+  "Malem Niani|Koumpentoum": { maire: "Sirmang Sall", note: "Source à recouper." },
+  "Kothiary|Goudiry": { maire: "Ismaïla Kaba", note: "Installé le 8 février 2022 (coalition Wallu Sénégal)." },
+  "Bandafassi|Kédougou": { maire: "Cheikh Mbacké Sock", note: "Sources divergentes (Mamadou Yoro Bâ aussi mentionné) — à reconfirmer." },
+  "Dindefelo|Kédougou": { maire: "Kikala Diallo", note: "Source à recouper." },
+  "Fongolimbi|Kédougou": { maire: "Samba Camara", note: "Source à recouper." },
+  "Tomboroncoto|Kédougou": { maire: "Nfally Camara", note: "Source à recouper." },
+  "Khossanto|Saraya": { maire: "Mamady Cissokho", note: "Réélu, installé le 11 février 2022." },
+  "Saraya|Saraya": { maire: "Sambaly Biagui", note: "Élu en janvier 2022 (coalition And Défar Sa Gokh), succède à Ngouda Soumaré." },
+  "Bembou|Saraya": { maire: "Mady Danfakha", note: "Source à recouper." },
+  "Dar Salam|Salémata": { maire: "Kamissa Camara", note: "Source à recouper." },
+  "Dabo|Kolda": { maire: "Idrissa Baldé", note: "Source à recouper." },
+  "Médina Yoro Foulah|Médina Yoro Foulah": { maire: "Kalidou Sy", note: "Réélu (2ᵉ mandat), installé le 9 février 2022." },
+  "Diaobé-Kabendou|Vélingara": { maire: "Bambo Guirassy", note: "Élu en janvier 2022 (Pastef)." },
+  "Pakour|Vélingara": { maire: "Diarga Sané", note: "Source à recouper." }
 };
