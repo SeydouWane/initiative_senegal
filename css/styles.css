@@ -238,6 +238,13 @@ nav.links a:hover{ color:var(--text); }
 .b-ref{ background:var(--status-danger); }
 .empty-state{ padding:34px 16px; text-align:center; color:var(--text-muted); font-size:14px; }
 
+/* PHOTOS */
+.photo-grid{ display:grid; grid-template-columns:1fr 1fr; gap:20px; }
+@media(max-width:760px){ .photo-grid{ grid-template-columns:1fr; } }
+.photo-grid figure{ margin:0; border:1px solid var(--line); overflow:hidden; background:var(--surface-alt); }
+.photo-grid img{ display:block; width:100%; height:360px; object-fit:cover; }
+.photo-caption{ margin-top:20px; font-size:13px; color:var(--text-muted); text-align:center; }
+
 /* MODAL */
 .modal-back{
   position:fixed; inset:0; background:rgba(14,17,19,.6); display:flex; align-items:center; justify-content:center;
