@@ -113,37 +113,42 @@ région, statut]`). Statuts possibles :
 
 Les fiches (ouvertes en cliquant une commune dans la liste) affichent :
 
-- **Maire** — renseigné dans `COMMUNE_DETAILS` (clé `"Nom|Département"`)
-  pour 214 communes sur 553 (les 14 régions ont au moins quelques communes
-  couvertes), à partir de recherches documentaires sur les élections
-  locales de janvier 2022 (et remplacements connus depuis — décès,
-  démissions, révocations). Les régions de Dakar (42 communes) et de Thiès
-  sont les mieux couvertes ; ailleurs la couverture est partielle et très
-  variable d'une commune à l'autre. Beaucoup d'entrées portent la note
-  « Source à recouper » — un seul article de presse, souvent non daté,
-  faute de mieux : à vérifier en priorité avant toute publication
-  officielle.
-  Certaines entrées portent une note explicite quand les sources se
-  contredisent ou datent d'avant/après un remplacement en cours de mandat
-  (ex. Kayar, Pout, Sébikhotane, Rufisque Ouest) — à trancher en priorité.
-  **Toutes les entrées sont à vérifier avant toute publication
-  officielle** — un mandat peut avoir changé de titulaire sans que cela ait
-  été retrouvé lors de la recherche. Note : les grandes « Villes » à statut
-  particulier (Dakar, Pikine, Guédiawaye, Rufisque, Thiès) n'ont pas
-  elles-mêmes d'entrée : le maire de ville n'a pas de correspondance 1:1
-  avec une seule commune, chaque commune d'arrondissement ayant son propre
-  maire (déjà renseignés séparément). La grande majorité des 553 communes
-  n'a pas de maire renseigné (aucune base de données publique centralisée
-  des résultats commune par commune n'a été trouvée) : à compléter au format
+- **Maire** — renseigné dans `COMMUNE_DETAILS` (clé `"Nom|Département"`,
+  champs `maire` + `note`) pour 214 communes sur 553 (les 14 régions ont au
+  moins quelques communes couvertes), à partir de recherches documentaires
+  sur les élections locales de janvier 2022 (et remplacements connus
+  depuis — décès, démissions, révocations). Les régions de Dakar
+  (42 communes) et de Thiès sont les mieux couvertes ; ailleurs la
+  couverture est partielle et très variable d'une commune à l'autre.
+  Beaucoup d'entrées portent la note « Source à recouper » — un seul
+  article de presse, souvent non daté, faute de mieux — ou signalent des
+  sources contradictoires (ex. Kayar, Pout, Sébikhotane, Mboss) : à
+  vérifier en priorité avant toute publication officielle, un mandat
+  ayant pu changer de titulaire sans que la recherche le détecte. Note :
+  les grandes « Villes » à statut particulier (Dakar, Pikine, Guédiawaye,
+  Rufisque, Thiès) n'ont pas elles-mêmes d'entrée — chaque commune
+  d'arrondissement a son propre maire, déjà renseigné séparément.
+- **Référent local**, **Documents obtenus**, **Dernière mise à jour** —
+  champs `referent`, `documents`, `updated` (+ `suivi`, un résumé libre
+  affiché dans le footnote) dans `COMMUNE_DETAILS`. Absents d'une commune,
+  ils retombent sur les placeholders (« Poste à pourvoir », « Aucun
+  document répertorié pour l'instant », « — »). Une première commune
+  (Grand Yoff) porte un vrai suivi de terrain à titre d'exemple ; plusieurs
+  dizaines d'autres ont au moins un nom de référent. **Vie privée** :
+  seul le nom complet du/de la référent·e est publié, jamais son numéro de
+  téléphone ni son pays de résidence — à respecter pour tout ajout futur.
+  Plusieurs référents sur une même commune : séparez les noms par
+  `", "` dans le champ `referent` (ex. `"Awa Ly, Ismael E. Badji"`).
+  Format d'une entrée complète :
   ```js
-  "Nom de la commune|Nom du département": { maire: "Nom Prénom", note: "source / précision" }
+  "Nom de la commune|Nom du département": {
+    maire: "Nom Prénom", note: "source / précision",
+    referent: "Nom Prénom(s)",
+    documents: "état des documents obtenus",
+    updated: "JJ/MM/AAAA",
+    suivi: "résumé de la démarche en cours, sans coordonnées personnelles"
+  }
   ```
-- **Référent local** et **Documents obtenus** — volontairement laissés à
-  « Poste à pourvoir » / « Aucun document répertorié » : le réseau de
-  référents n'est pas encore constitué et aucune démarche réelle n'a encore
-  abouti. À ajouter dans `COMMUNE_DETAILS` (et adapter `openModal()` dans
-  `js/app.js`) au fil des vraies démarches, plutôt que d'inventer des
-  informations sur de vraies communes.
 
 ## Formulaire référent (« Se porter volontaire »)
 

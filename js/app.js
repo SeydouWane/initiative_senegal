@@ -130,18 +130,23 @@
     badge.className = 'badge ' + STATUS_CLASS[c.status];
 
     document.getElementById('modalMaire').textContent = details.maire || 'Non renseigné';
-    document.getElementById('modalReferent').textContent = 'Poste à pourvoir';
-    document.getElementById('modalDocs').textContent = 'Aucun document répertorié pour l\'instant';
-    document.getElementById('modalUpdated').textContent = '—';
+    document.getElementById('modalReferent').textContent = details.referent || 'Poste à pourvoir';
+    document.getElementById('modalDocs').textContent = details.documents || 'Aucun document répertorié pour l\'instant';
+    document.getElementById('modalUpdated').textContent = details.updated || '—';
 
     var footnote = document.getElementById('modalFootnote');
+    var footnoteParts = [];
     if(details.maire){
-      footnote.textContent = 'Nom du maire issu de recherches documentaires (élections locales 2022' +
+      footnoteParts.push('Nom du maire issu de recherches documentaires (élections locales 2022' +
         (details.note ? ' — ' + details.note : '') +
-        '). À vérifier par le réseau de référents avant publication officielle. Référent local, documents et statut restent à documenter.';
-    } else {
-      footnote.textContent = 'Fiche illustrative. Les informations réelles de cette commune seront ajoutées au fil des démarches suivies par nos référents locaux.';
+        '). À vérifier avant publication officielle.');
     }
+    if(details.suivi){
+      footnoteParts.push(details.suivi);
+    }
+    footnote.textContent = footnoteParts.length
+      ? footnoteParts.join(' ')
+      : 'Fiche illustrative. Les informations réelles de cette commune seront ajoutées au fil des démarches suivies par nos référents locaux.';
 
     modalBack.classList.add('open');
   }
