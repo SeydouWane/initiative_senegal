@@ -139,7 +139,7 @@
     if(details.maire){
       footnoteParts.push('Nom du maire issu de recherches documentaires (élections locales 2022' +
         (details.note ? ' — ' + details.note : '') +
-        '). À vérifier avant publication officielle.');
+        ').');
     }
     if(details.suivi){
       footnoteParts.push(details.suivi);
