@@ -3,6 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
+<script>(function(){try{var t=localStorage.getItem('ct-theme');if(t==='light'||t==='dark'){document.documentElement.setAttribute('data-theme',t);}}catch(e){}})();</script>
 <title>Communes Transparentes</title>
 <meta name="description" content="Initiative citoyenne, indépendante et non partisane, pour la transparence des communes du Sénégal : faire connaître le droit d'accès aux documents municipaux et accompagner les citoyens pour l'exercer.">
 
@@ -444,8 +445,36 @@ Je vous prie d'agréer, Monsieur/Madame le Maire, l'expression de ma considérat
 </div>
 <datalist id="communeSuggestions"></datalist>
 
+<aside class="side-tools" aria-label="Outils du site">
+  <button class="tool-btn theme-btn" id="themeToggle" type="button" data-mode="system" aria-label="Changer le thème (clair / sombre / système)">
+    <svg class="ti ti-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
+    <svg class="ti ti-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+    <svg class="ti ti-auto" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect><line x1="8" y1="21" x2="16" y2="21"></line><line x1="12" y1="17" x2="12" y2="21"></line></svg>
+  </button>
+  <button class="tool-btn guide-btn" id="guideStart" type="button" aria-label="Lancer la visite guidée">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76"></polygon></svg>
+  </button>
+</aside>
+
+<div class="guide-panel" id="guidePanel" hidden>
+  <div class="guide-head">
+    <span class="guide-step" id="guideStepCount">1/6</span>
+    <button class="guide-close" id="guideClose" aria-label="Fermer la visite guidée">×</button>
+  </div>
+  <h4 id="guideTitle"></h4>
+  <p id="guideText"></p>
+  <div class="guide-actions">
+    <button class="guide-skip" id="guideSkip" type="button">Passer</button>
+    <div style="display:flex; gap:8px;">
+      <button class="btn btn-ghost" id="guidePrev" type="button">Précédent</button>
+      <button class="btn btn-primary" id="guideNext" type="button">Suivant</button>
+    </div>
+  </div>
+</div>
+
 <script src="js/data.js"></script>
 <script src="js/config.js"></script>
 <script src="js/app.js"></script>
+<script src="js/theme-guide.js"></script>
 </body>
 </html>

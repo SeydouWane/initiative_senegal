@@ -412,3 +412,43 @@ footer{ padding:56px 0 40px; }
   section{ padding:56px 0; }
   .wrap{ padding:0 20px; }
 }
+
+/* SIDE TOOLS (thème + visite guidée) */
+.side-tools{
+  position:fixed; right:16px; top:50%; transform:translateY(-50%); z-index:60;
+  display:flex; flex-direction:column; gap:8px;
+}
+.tool-btn{
+  width:44px; height:44px; display:flex; align-items:center; justify-content:center;
+  background:var(--surface); border:1px solid var(--line-strong); color:var(--text);
+  cursor:pointer; border-radius:2px; box-shadow:0 2px 10px rgba(0,0,0,.08);
+  transition:border-color .15s, color .15s;
+}
+.tool-btn:hover{ border-color:var(--green); color:var(--green-strong); }
+.tool-btn svg{ width:19px; height:19px; }
+.theme-btn .ti{ display:none; }
+.theme-btn[data-mode="light"] .ti-sun{ display:block; }
+.theme-btn[data-mode="dark"] .ti-moon{ display:block; }
+.theme-btn[data-mode="system"] .ti-auto{ display:block; }
+@media(max-width:640px){
+  .side-tools{ right:12px; top:auto; bottom:16px; transform:none; flex-direction:row; }
+}
+
+/* GUIDE (visite guidée) */
+.guide-panel{
+  position:fixed; right:16px; bottom:24px; z-index:90; width:min(320px, calc(100vw - 32px));
+  background:var(--surface); border:1px solid var(--line); border-top:3px solid var(--green);
+  padding:20px; box-shadow:0 10px 34px rgba(0,0,0,.16);
+}
+.guide-panel[hidden]{ display:none; }
+.guide-head{ display:flex; justify-content:space-between; align-items:center; margin-bottom:10px; }
+.guide-step{ font-family:"IBM Plex Mono",monospace; font-size:11.5px; color:var(--text-muted); letter-spacing:.04em; }
+.guide-close{ background:none; border:none; font-size:19px; color:var(--text-muted); cursor:pointer; line-height:1; padding:2px; }
+.guide-close:hover{ color:var(--text); }
+.guide-panel h4{ font-family:"Archivo",sans-serif; font-size:17px; margin:0 0 8px; }
+.guide-panel p{ font-size:13.5px; color:var(--text-muted); line-height:1.5; }
+.guide-actions{ display:flex; justify-content:space-between; align-items:center; gap:10px; margin-top:16px; }
+.guide-actions .btn{ padding:9px 14px; font-size:12px; }
+.guide-actions .btn[disabled]{ opacity:.4; cursor:not-allowed; }
+.guide-skip{ background:none; border:none; color:var(--text-muted); font-size:12px; text-decoration:underline; cursor:pointer; padding:0; }
+.guide-highlight{ outline:2px solid var(--green); outline-offset:-2px; transition:outline-color .2s; }
