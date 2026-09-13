@@ -4,13 +4,13 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <script>(function(){try{var t=localStorage.getItem('ct-theme');if(t==='light'||t==='dark'){document.documentElement.setAttribute('data-theme',t);}}catch(e){}})();</script>
-<title>Communes Transparentes</title>
+<title>Initiative Citoyenne pour la Transparence des Communes — ICTC</title>
 <meta name="description" content="Initiative citoyenne, indépendante et non partisane, pour la transparence des communes du Sénégal : faire connaître le droit d'accès aux documents municipaux et accompagner les citoyens pour l'exercer.">
 
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://seydouwane.github.io/initiative_senegal/">
-<meta property="og:site_name" content="Communes Transparentes — ICTC">
-<meta property="og:title" content="Communes Transparentes — ICTC">
+<meta property="og:site_name" content="Initiative Citoyenne pour la Transparence des Communes — ICTC">
+<meta property="og:title" content="Initiative Citoyenne pour la Transparence des Communes — ICTC">
 <meta property="og:description" content="Initiative citoyenne, indépendante et non partisane, pour la transparence des communes du Sénégal : faire connaître le droit d'accès aux documents municipaux et accompagner les citoyens pour l'exercer.">
 <meta property="og:image" content="https://seydouwane.github.io/initiative_senegal/images/og-image.png">
 <meta property="og:image:width" content="1200">
@@ -18,7 +18,7 @@
 <meta property="og:locale" content="fr_FR">
 
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Communes Transparentes — ICTC">
+<meta name="twitter:title" content="Initiative Citoyenne pour la Transparence des Communes — ICTC">
 <meta name="twitter:description" content="Initiative citoyenne, indépendante et non partisane, pour la transparence des communes du Sénégal : faire connaître le droit d'accès aux documents municipaux et accompagner les citoyens pour l'exercer.">
 <meta name="twitter:image" content="https://seydouwane.github.io/initiative_senegal/images/og-image.png">
 
@@ -37,9 +37,9 @@
   <div class="cover-scrim"></div>
   <div class="cover-text">
     <img class="cover-logo" src="images/logo.png" alt="" width="88" height="88">
-    <div class="cover-ictc">ICTC <span>(Initiative Citoyenne pour la Transparence des Communes)</span></div>
+    <div class="cover-ictc">ICTC</div>
     <span class="flagmark"><span></span><span></span><span></span></span>
-    <h1>Communes Transparentes</h1>
+    <h1>Initiative Citoyenne pour la Transparence des Communes</h1>
     <p>Informer · Participer · Contrôler · Bâtir Ensemble</p>
   </div>
   <div class="tribar cover-tribar bottom"><span></span><span></span><span></span></div>
@@ -51,16 +51,22 @@
 <header class="top">
   <div class="navrow">
     <a class="brand" href="#accueil">
-      <img src="images/logo.png" alt="Communes Transparentes" onerror="this.remove()">
-      <span>Communes Transparentes</span>
+      <img src="images/logo.png" alt="ICTC" onerror="this.remove()">
+      <span class="brand-full">Initiative Citoyenne pour la Transparence des Communes</span>
+      <span class="brand-short">ICTC</span>
     </a>
-    <nav class="links">
+    <button class="nav-toggle" id="navToggle" type="button" aria-expanded="false" aria-controls="navLinks" aria-label="Ouvrir le menu">
+      <svg class="icon-burger" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+      <svg class="icon-close" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="5" y1="5" x2="19" y2="19"></line><line x1="19" y1="5" x2="5" y2="19"></line></svg>
+    </button>
+    <nav class="links" id="navLinks">
       <a href="#accueil">Manifeste</a>
       <a href="#carte">La carte</a>
       <a href="#demarche">Notre démarche</a>
       <a href="#droits">Vos droits</a>
       <a href="#participer">Participer</a>
       <a href="#ressources">Ressources</a>
+      <a class="btn btn-primary navlink-cta" href="#carte">Voir la carte</a>
     </nav>
     <a class="btn btn-primary navcta" href="#carte">Voir la carte</a>
   </div>
@@ -378,6 +384,14 @@ Je vous prie d'agréer, Monsieur/Madame le Maire, l'expression de ma considérat
   <footer>
     <div class="wrap">
       <div class="tribar" style="margin-bottom:32px;"><span></span><span></span><span></span></div>
+      <nav class="foot-nav">
+        <a href="#accueil">Manifeste</a>
+        <a href="#carte">La carte</a>
+        <a href="#demarche">Notre démarche</a>
+        <a href="#droits">Vos droits</a>
+        <a href="#participer">Participer</a>
+        <a href="#ressources">Ressources</a>
+      </nav>
       <div class="foot-row">
         <div>
           <div class="foot-tag">Informer • Participer • Contrôler • Bâtir Ensemble 🇸🇳</div>
@@ -453,7 +467,7 @@ Je vous prie d'agréer, Monsieur/Madame le Maire, l'expression de ma considérat
         <textarea id="refDesc" name="Description" rows="4" required placeholder="Présentez-vous en quelques mots et dites-nous ce qui vous motive."></textarea>
       </div>
       <input type="text" name="_honey" class="ref-honey" tabindex="-1" autocomplete="off" aria-hidden="true">
-      <input type="hidden" name="_subject" value="Nouvelle candidature référent — Communes Transparentes">
+      <input type="hidden" name="_subject" value="Nouvelle candidature référent — ICTC">
       <div class="ref-status" id="refStatus" role="status" aria-live="polite"></div>
       <button class="btn btn-primary" type="submit" id="refSubmitBtn">Envoyer ma candidature</button>
     </form>

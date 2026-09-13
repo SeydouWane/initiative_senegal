@@ -33,9 +33,9 @@
 
   /* ---- Visite guidée ---- */
   var steps = [
-    { selector: '#accueil', title: 'Bienvenue sur Communes Transparentes', text: "Ceci est le manifeste de l'initiative : la transparence communale n'est pas une faveur, c'est un droit inscrit dans la loi." },
+    { selector: '#accueil', title: 'Bienvenue sur ICTC', text: "Ceci est le manifeste de l'Initiative Citoyenne pour la Transparence des Communes : la transparence communale n'est pas une faveur, c'est un droit inscrit dans la loi." },
     { selector: '#carte', title: 'La carte citoyenne', text: '553 communes réparties dans 46 départements. Cliquez un point pour filtrer sur un département, ou utilisez la recherche et les filtres région/statut.' },
-    { selector: '#demarche', title: 'Nos quatre principes', text: 'Informer, participer, contrôler, améliorer : la même méthode appliquée à chaque commune, sans parti pris.' },
+    { selector: '#demarche', title: 'Nos quatre principes', text: 'Informer, participer, contrôler, bâtir ensemble : la même méthode appliquée à chaque commune, sans parti pris.' },
     { selector: '#droits', title: 'Vos droits', text: "Le mode d'emploi concret pour exercer votre droit d'accès à l'information, étape par étape." },
     { selector: '#participer', title: 'Devenez référent', text: 'Rejoignez le réseau et accompagnez les citoyens de votre commune dans leurs démarches.' },
     { selector: '#ressources', title: 'Ressources pratiques', text: "Modèle de lettre, guide de lecture d'un budget, guide de lecture d'un procès-verbal — prêts à l'emploi." }
@@ -104,4 +104,30 @@
   document.addEventListener('keydown', function(e){
     if(e.key === 'Escape' && guidePanel && !guidePanel.hidden){ closeGuide(); }
   });
+
+  /* ---- Menu mobile ---- */
+  var navToggle = document.getElementById('navToggle');
+  var navLinks = document.getElementById('navLinks');
+
+  function closeNav(){
+    if(!navLinks) return;
+    navLinks.classList.remove('open');
+    navToggle.setAttribute('aria-expanded', 'false');
+  }
+
+  if(navToggle && navLinks){
+    navToggle.addEventListener('click', function(){
+      var open = navLinks.classList.toggle('open');
+      navToggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+    });
+    navLinks.querySelectorAll('a').forEach(function(a){
+      a.addEventListener('click', closeNav);
+    });
+    document.addEventListener('keydown', function(e){
+      if(e.key === 'Escape'){ closeNav(); }
+    });
+    window.addEventListener('resize', function(){
+      if(window.innerWidth > 860){ closeNav(); }
+    });
+  }
 })();
